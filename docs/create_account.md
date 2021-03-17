@@ -14,14 +14,39 @@
 ## Workflow
 
 ## Details of Requirements (Rincian kebutuhan)
-Input | Requirement
------------- | -------------
-Email | Required (wajib diisi)
-      | Valid email (format email)
-Password | Required (wajib diisi)
-         | Min. 6 character length (minimum panjang 6 karakter)
-         | Contains at least 1 capital or numeric letter (minimal terdiri 1 karakter yang mendandung huruf kapital atau angka)
-Button: Sign Up | Go to dashboard page (menuju page dashboard)
+<table>
+    <thead>
+        <tr>
+            <th>Layer 1</th>
+            <th>Input</th>
+            <th>Requirements</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan=4>L1 Name</td>
+            <td rowspan=2>Email</td>
+            <td>Required (wajib diisi)</td>
+        </tr>
+        <tr>
+            <td>Valid email (format email)</td>
+        </tr>
+        <tr>
+            <td rowspan=2>Password</td>
+            <td>Required (wajib diisi)</td>
+        </tr>
+        <tr>
+            <td>Min. 6 character length (minimum panjang 6 karakter)</td>
+        </tr>
+                <tr>
+            <td>Contains at least 1 capital or numeric letter (minimal mengandung 1 karakter huruf kapital atau angka)</td>
+        </tr>
+                <tr>
+            <td rowspan=2>Button: Sign Up</td>
+            <td>Go to dashboard page (menuju page dashboard)</td>
+        </tr>
+    </tbody>
+</table>
 
 ## User Acceptance Test (UAT) - Kondisi Ideal
 * (Given) I am on Sign Up page (saya sedang di halaman pendaftaran)
