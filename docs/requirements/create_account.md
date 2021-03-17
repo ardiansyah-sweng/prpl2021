@@ -15,6 +15,7 @@
 ![Sign Up Workflow](/images/sign_up.svg)
 
 ## Wireframe
+![Sign Up Workflow](/images/sign_up_wireframe.svg)
 
 ## Details of Requirements (Rincian kebutuhan)
 <table>
