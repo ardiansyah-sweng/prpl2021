@@ -14,6 +14,8 @@
 ## Workflow
 ![Sign Up Workflow](/images/sign_up.svg)
 
+## Wireframe
+
 ## Details of Requirements (Rincian kebutuhan)
 <table>
     <thead>
