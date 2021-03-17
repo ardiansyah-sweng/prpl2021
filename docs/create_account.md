@@ -17,14 +17,12 @@
 <table>
     <thead>
         <tr>
-            <th>Layer 1</th>
             <th>Input</th>
             <th>Requirements</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td rowspan=4>L1 Name</td>
             <td rowspan=2>Email</td>
             <td>Required (wajib diisi)</td>
         </tr>
@@ -32,15 +30,13 @@
             <td>Valid email (format email)</td>
         </tr>
         <tr>
-            <td rowspan=2>Password</td>
+            <td rowspan=3>Password</td>
             <td>Required (wajib diisi)</td>
         </tr>
         <tr>
             <td>Min. 6 character length (minimum panjang 6 karakter)</td>
         </tr>
-                <tr>
             <td>Contains at least 1 capital or numeric letter (minimal mengandung 1 karakter huruf kapital atau angka)</td>
-        </tr>
                 <tr>
             <td rowspan=2>Button: Sign Up</td>
             <td>Go to dashboard page (menuju page dashboard)</td>
