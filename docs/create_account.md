@@ -12,6 +12,7 @@
 * So that I can use all the features (Sehingga saya bisa menggunakan semua fitur yang ditawarkan)
 
 ## Workflow
+![Sign Up Workflow](/images/sign_up.svg)
 
 ## Details of Requirements (Rincian kebutuhan)
 <table>
