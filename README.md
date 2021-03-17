@@ -1,5 +1,4 @@
-# prpl2021
-Repository proyek aplikasi mata kuliah PRPL2021
+# PRPL2021
+Repository proyek aplikasi mata kuliah PRPL2021 Teknik Informatika UAD
 
-Proyek kuliah PRPL2021. Studi kasus proyek ini adalah aplikasi CariKos.COM
-Selain itu kita juga akan coba belajar membuat framework web mini berbasis PHP 
+Proyek kuliah PRPL2021.
