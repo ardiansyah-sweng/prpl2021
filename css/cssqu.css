@@ -1,0 +1,154 @@
+* {
+    font-family: "Poppins";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+	position: relative;
+}
+body {
+    background: url(bg.png);
+    background-repeat: no-repeat;
+  	background-attachment: fixed;
+}
+section {
+	min-height: 250px;
+	padding-top: 80px;
+	padding-bottom: 150px;
+}
+hr.line{
+	border: 1px solid;
+	border-image: linear-gradient(45deg, #f00081, #00b5f0) 1;
+	margin-left: -10px;
+}
+section h1{
+	margin-top: 180px;
+	font-size: 50px;
+	font-weight: bold;
+}
+/*INDEX PHP*/
+
+.container2{
+	margin-top: 45px;
+	width: 350px;
+	height: 550px;
+	background: url(ll.png);
+	box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+	/*border-radius: 20px;*/
+}
+.container2 h1{
+	padding-top: 100px;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+.container2 h6{
+	padding-bottom: 20px;
+}
+.container2 input{
+	outline: none;
+	border-radius: 30px;
+	padding-left: 40px;
+	box-shadow: 0px 5px 10px rgba(0,0,0,0.3);
+	border: none;
+}
+.container2 .field-icon{
+	float: left;
+	margin-left: 15px;
+	margin-top: -26px;
+	position: relative;
+	z-index: 2;
+}
+.container2 label{
+	float: left;
+}
+.container2 input{
+	font-size: 14px;
+}
+.container2 input::placeholder{
+    font-size: 14px;
+}
+.container2 form h6{
+	margin: 10px -50px 0px 0px;
+	text-align: right;
+	font-weight: bold;
+}
+.container2 button{
+	width: 40px;
+	height: 40px;
+	outline: none;
+	border: none;
+	border-radius: 50px;
+	margin-left: 20px;
+	background-image: linear-gradient(0deg,#c674f2,#37b1e6);
+}
+.container2 button:hover{
+	background: transparent;
+}
+.container2 button p{
+	margin: -3px 0px 0px 0px;
+	font-size: 30px;
+	color: #fff;
+	transition: 0.3s;
+}
+.container2 button p:hover{
+	margin: -4px 0px 0px 0px;
+	transform: scale(1.1);
+	color: #37b1e6;
+}
+/*END INDEX PHP*/
+
+
+/* WELCOME PAGE PHP*/
+.container a{
+	font-family: 'Gaston Villa';
+	font-size: 30px;
+}
+.container .navbar-nav a {
+	font-family: "Poppins";
+	font-size: 14px;
+}
+.home p{
+	margin: 0px 120px 0px 120px;
+}
+.services .row img{
+	width: 40px;
+	height: auto;
+}
+.services .row img{
+	margin: 30px 0px 0px 0px;
+	width: auto;
+	height: 40px;
+}
+.services .row h6{
+	margin: 10px 0px 10px 0px;
+	color: white;
+}
+.services .row p{
+	padding: 0px 50px 0px 50px;
+	margin-bottom: 100px;
+}
+.contact .row input{
+	outline: none;
+	border-radius: 30px;
+	padding-left: 15px;
+	box-shadow: 0px 5px 10px rgba(0,0,0,0.3);
+	border: none;
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+.contact button{
+	width: 80px;
+	height: 35px;
+	outline: none;
+	border: none;
+	color: #fff;
+	border-radius: 10px;
+	background-image: linear-gradient(0deg,#c674f2,#37b1e6);
+	transition: 0.3s;
+}
+.contact button:hover{
+	transform: scale(1.1);
+}
+
+/* END WELCOME PAGE PHP */
