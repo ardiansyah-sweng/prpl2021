@@ -36,7 +36,7 @@ if (ISSET($_POST['submit'])) {
       // $sql_insert = "INSERT INTO user VALUES('$email', '$pass')";
       // mysqli_query($koneksi, $sql_insert);
       
-      header("location: lndng_pg.php");
+      header("location: dashboard.php");
     }
     
 }
