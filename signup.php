@@ -13,7 +13,7 @@ $panjang_pass_msg1 = "";
 if (ISSET($_POST['submit'])) {
     $email = $_POST['email'];
     $pass = ($_POST['password']);
-
+    
     if (empty($email) || empty($pass)) {
         return 'Username or password is empty!';
     }
@@ -31,11 +31,6 @@ if (ISSET($_POST['submit'])) {
     }
     
     if( !empty($email) and !empty($pass) and $panjang_pass and $panjang_pass1){
-      
-      // Data di masukan ke sql (opsional)
-      // $sql_insert = "INSERT INTO user VALUES('$email', '$pass')";
-      // mysqli_query($koneksi, $sql_insert);
-      
       header("location: dashboard.php");
     }
     
