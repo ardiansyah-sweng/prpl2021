@@ -12,7 +12,7 @@
 * So that I can use all the features (Sehingga saya bisa menggunakan semua fitur yang ditawarkan)
 
 ## Workflow
-![Sign Up Workflow](/images/sign_in.svg)
+![Sign Up Workflow](/images/sign_in_workflow.svg)
 
 ## Wireframe
 ![Sign Up Workflow](/images/sign_in_wireframe.svg)
