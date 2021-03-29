@@ -1,9 +1,6 @@
 <?php
+$conn = mysqli_connect("localhost", "root", "", "kcb");
 
-/**
- * SignUp
- * 
- */
 class SignUp
 {
     /**
@@ -11,7 +8,18 @@ class SignUp
      */
     function sendEmail()
     {
-        //Your code is here
+        $to = 'email';
+        $subject = 'Your account has created';
+        $message = 'Hi, ' . $to . '<br><br>Your account is successfully created.<br><br>Please enjoy<br>Sweng-Academy Team';
+        $from = 'peterparker@email.com';
+
+
+        // Sending email
+        if (mail($to, $subject, $message)) {
+            echo 'Your mail has been sent successfully.';
+        } else {
+            echo 'Unable to send email. Please try again.';
+        }
     }
 
     function inputValidation($email, $password)
@@ -28,7 +36,7 @@ class SignUp
         if (!preg_match("#[0-9]+#", $password) && !preg_match("#[A-Z]+#", $password)) {
             return "Your Password Must Contain At Least 1 Number or capital letter! ";
         }
-        
+
         session_start();
         $_SESSION['username'] = $email;
         header("location: dashboard.php");
