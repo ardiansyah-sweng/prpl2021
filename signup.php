@@ -11,7 +11,18 @@ class SignUp
      */
     function sendEmail()
     {
-        //Your code is here
+        $to = 'Muhammad Syafiq akmal';
+        $subject = 'Your account has created';
+        $message = 'Hi, ' . $to . '<br><br>Your account is successfully created.<br><br>Please enjoy<br>Sweng-Academy Team';
+        $from = 'akmal.indo789@gmail.com';
+
+
+        // Sending email
+        if (mail($to, $subject, $message)) {
+            echo 'Your mail has been sent successfully.';
+        } else {
+            echo 'Unable to send email. Please try again.';
+        }
     }
 
     function inputValidation($email, $password)
@@ -34,3 +45,4 @@ class SignUp
         header("location: dashboard.php");
     }
 }
+?>
