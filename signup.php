@@ -32,8 +32,7 @@ if (ISSET($_POST['submit'])) {
     
     if( !empty($email) and !empty($pass) and $panjang_pass and $panjang_pass1){
       header("location: dashboard.php");
-    }
-    
+    }  
 }
 ?>
 
