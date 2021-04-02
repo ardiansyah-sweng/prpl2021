@@ -12,21 +12,6 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-section {
-  min-height: 250px;
-  padding-top: 80px;
-  padding-bottom: 150px;
-}
-hr.line {
-  border: 1px solid;
-  border-image: linear-gradient(45deg, #f00081, #00b5f0) 1;
-  margin-left: -10px;
-}
-section h1 {
-  margin-top: 100px;
-  font-size: 50px;
-  font-weight: bold;
-}
 /*INDEX PHP*/
 
 .container2 {
@@ -106,63 +91,3 @@ section h1 {
   font-size: 13px;
 }
 /*END INDEX PHP*/
-
-/* DASHBOARD PHP*/
-.container .msg {
-  background-color: #00c95b;
-  color: white;
-  margin: 10px 270px 10px 270px; 
-  padding:5px 0px 5px 0px;"
-}
-.container a {
-  font-family: "Gaston Villa";
-  font-size: 30px;
-}
-.container .navbar-nav a {
-  font-family: "Poppins";
-  font-size: 14px;
-}
-.home p {
-  margin: 0px 120px 0px 120px;
-}
-.services .row img {
-  width: 40px;
-  height: auto;
-}
-.services .row img {
-  margin: 30px 0px 0px 0px;
-  width: auto;
-  height: 40px;
-}
-.services .row h6 {
-  margin: 10px 0px 10px 0px;
-  color: white;
-}
-.services .row p {
-  padding: 0px 50px 0px 50px;
-  margin-bottom: 100px;
-}
-.contact .row input {
-  outline: none;
-  border-radius: 30px;
-  padding-left: 15px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
-  border: none;
-  margin-bottom: 20px;
-  margin-top: 10px;
-}
-.contact button {
-  width: 80px;
-  height: 35px;
-  outline: none;
-  border: none;
-  color: #fff;
-  border-radius: 10px;
-  background-image: linear-gradient(0deg, #c674f2, #37b1e6);
-  transition: 0.3s;
-}
-.contact button:hover {
-  transform: scale(1.1);
-}
-
-/* END WELCOME PAGE PHP */
