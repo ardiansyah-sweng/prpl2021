@@ -13,7 +13,7 @@ if (!isset($_SESSION['username'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" type="text/css" href="css/cssku.css">
+  <link rel="stylesheet" type="text/css" href="css/cssqu2.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <link rel="icon" type="icon/png" href="img/lego.ico">
 
@@ -26,7 +26,7 @@ if (!isset($_SESSION['username'])) {
   <nav class="navbar navbar-expand-sm navbar-dark fixed-top scrolling-navbar" style="background-color: rgba(7, 50, 168, 0.5);">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand page-scroll styleA" href="#home" style="">sndyprtn</a>
+        <a class="navbar-brand page-scroll styleA" href="#home">sndyprtn</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -34,7 +34,7 @@ if (!isset($_SESSION['username'])) {
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link page-scroll" href="#home">home</a></li>
-          <li class="nav-item"><a class="nav-link page-scroll" href="#services">services</a></li>
+          <li class="nav-item"><a class="nav-link page-scroll" href="#features">features</a></li>
           <li class="nav-item"><a class="nav-link page-scroll" href="#contact">contact</a></li>
           <li class="nav-item"><a class="nav-link page-scroll" onclick="return confirm('Apakah yakin ingin Logout?')" href="signin.php">logout</a></li>
         </ul>
@@ -45,44 +45,67 @@ if (!isset($_SESSION['username'])) {
 
   <!-- Home -->
   <section class="home" id="home">
-    <div class="container text-center">
-      <h1>WELCOME</h1>
-      <p><?php echo $_SESSION['username']; ?></p>
-      <p>Lorem ipsum anim cillum sed ut duis officia pariatur dolor nostrud non. Consectetur aliquip in est fugiat et aliqua mollit occaecat esse nulla. Lorem ipsum labore sint ullamco est voluptate nulla occaecat ut aliqua duis voluptate dolore elit. In elit aliquip reprehenderit tempor culpa duis sint quis irure.</p>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <div class="container">
+      <div class="row justify-content-end">
+        <div class="col-5">
+          <h1>HALLO</h1>
+          <p><?php echo $_SESSION['username']; ?></p>
+          <!-- <hr class="col-4 line"> -->
+          <h4>Build a website for your business for or project and generate more leads!</h4>
+          <button type="submit">Get started</button>
+        </div>
+        <div class="col-7">
+          <img src="img/head.png">
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     </div>
   </section>
   <!-- End Home -->
 
-  <!-- Services -->
-  <section class="services" id="services">
+  <!-- features -->
+  <section class="features" id="features">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-2 text-center">
-          <h5>SERVICES</h5>
+          <h5>FEATURES</h5>
           <hr class="line">
         </div>
       </div>
       <div class="row justify-content-center text-center">
         <div class="col-4">
           <img src="img/ser/p.png">
-          <h6>WEB DESIGN</h6>
-          <p>Make better web design than your competitor with simple look but perfect and modern.</p>
+          <h6>Cool UI</h6>
+          <p>Make better web design than with simple look but perfect and modern.</p>
         </div>
         <div class="col-4">
-          <img src="img/ser/vid.png">
-          <h6>VIDEO MAKER</h6>
-          <p>Make awesome and professional video to promote your brand, bussines or your company. </p>
+          <img src="img/ser/bs.png">
+          <h6>Bootstrap 5 Ready</h6>
+          <p>Featuring the latest build of the new Bootstrap 5 framework.</p>
         </div>
         <div class="col-4">
-          <img src="img/ser/pnc.png">
-          <h6>PHOTO EDITOR</h6>
-          <p>Edit your photos faster and nicely</p>
+          <img src="img/ser/ez.png">
+          <h6>Easy to Use</h6>
+          <p>Ready to use with your own content, or costumize the source file.</p>
+        </div>
+      </div>
+      <div class="row justify-content-center text-center">
+        <div class="col-4">
+          <img src="img/ser/res.png">
+          <h6>Fully Responsive</h6>
+          <p>This theme whill look great on any device, no matter the size.</p>
+        </div>
+        <div class="col-4">
+          <img src="img/ser/co.png">
+          <h6>Colorful</h6>
+          <p>With right color pallet make more awesome</p>
         </div>
       </div>
     </div>
   </section>
-  <!-- End Services -->
+  <!-- End features -->
 
   <!-- Contact -->
   <section class="contact" id="contact">
@@ -115,6 +138,16 @@ if (!isset($_SESSION['username'])) {
     </div>
   </section>
   <!-- End Contact -->
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <p>- &copy; Copyright 2020. Portfolio by sndy prtn -</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>
