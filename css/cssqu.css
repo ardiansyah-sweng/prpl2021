@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "Poppins";
+  src: url(font/Poppins-Regular.ttf);
+}
 * {
   font-family: "Poppins";
   margin: 0;
@@ -12,8 +16,21 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-/*INDEX PHP*/
+section h1 {
+  margin-top: 180px;
+  font-size: 50px;
+  font-weight: bold;
+}
 
+/* CSS Email checker */
+.container .msg {
+  background-color: #00c95b;
+  color: white;
+  margin: 10px 270px 10px 270px;
+  padding: 5px 0px 5px 0px;
+}
+
+/* CSS Container2 SignUp dan SignIn */
 .container2 {
   margin-top: 45px;
   width: 350px;
@@ -84,10 +101,9 @@ body {
   border: 2px solid #014441;
 }
 .container .ex,
-.home .container a,
+.home .container .ex a,
 .container2 p a {
   font-family: "Poppins";
   text-decoration: none;
-  font-size: 13px;
+  font-size: 14px;
 }
-/*END INDEX PHP*/
