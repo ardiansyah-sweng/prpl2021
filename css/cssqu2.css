@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Poppins";
+  src: url(../font/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "Gaston Villa";
+  src: url(../font/Gaston-Villa.ttf);
+}
+
 * {
   font-family: "Poppins";
   margin: 0;
@@ -28,12 +37,6 @@ section h1 {
 }
 
 /* DASHBOARD PHP*/
-.container .msg {
-  background-color: #00c95b;
-  color: white;
-  margin: 10px 270px 10px 270px;
-  padding: 5px 0px 5px 0px;
-}
 .home img {
   width: 600px;
   height: auto;
@@ -87,6 +90,13 @@ section h1 {
 .home .container button:hover,
 .contact button:hover {
   transform: scale(1.1);
+}
+.container .ex,
+.home .container a,
+.container2 p a {
+  font-family: "Poppins";
+  text-decoration: none;
+  font-size: 10px;
 }
 
 /* END WELCOME PAGE PHP */
