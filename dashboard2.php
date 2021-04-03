@@ -143,7 +143,7 @@ if (!isset($_SESSION['username'])) {
     <div class="container">
       <div class="row">
         <div class="col-sm-12 text-center">
-          <p>- &copy; Copyright 2020. Portfolio by sndy prtn -</p>
+          <p>- &copy; Copyright 2020. Web by sndy prtn -</p>
         </div>
       </div>
     </div>
