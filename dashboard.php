@@ -4,7 +4,18 @@ if (!isset($_SESSION['email'])) {
     header("Location: signup.php");
 }
 echo 'Welcome, '. $_SESSION['email'];
+
+
+function sendEmail(){
+    $from ="noreply@sweng-academy.com";
+    $to = $_SESSION['email'];
+    $subject ="Your Account has been Created!";
+    $message = "Hi " . $_SESSION['email'];
+}
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
