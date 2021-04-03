@@ -1,13 +1,16 @@
 <?php
-
 if (isset($_POST['submit'])) {
-  $email       = $_POST['email'];
-  $pass        = md5($_POST['password']);
+  $email       = $_POST['email'];                               //Menyimpan data input email
+  $pass        = md5($_POST['password']);                       //Menyimpan data input pass
 
+  //Koneksi ke database
+  $koneksi = mysqli_connect("localhost", "root", "", "prpl1");
   include 'koneksi.php';
 
+  //Query mengambil data dari database sesuai input user
   $cek = mysqli_query($koneksi, "select * from user where email='$email' and pass='$pass'");
   $data = mysqli_num_rows($cek);
+
 
   if ($data > 0) {
     session_start();
