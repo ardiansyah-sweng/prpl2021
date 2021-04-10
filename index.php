@@ -69,7 +69,7 @@ require_once('config.php');
               Swal.fire({
                 'icon': 'success',
                 'title': 'Success',
-                'text': 'Check Your Email!',
+                'text': 'Welcome, #email',
                 'type': 'Success'
               })
               window.location.href = "dashboard.php";
