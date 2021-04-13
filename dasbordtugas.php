@@ -18,7 +18,7 @@
         session_start();
         if (!isset($_SESSION['username'])) {
           header("Location: signuptugas.php");
-        }
+        } 
     echo 'Selamat Datang :)';
     ?>
     </center>

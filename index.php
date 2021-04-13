@@ -15,7 +15,7 @@
     <div class= "login">
     <h1>HALAMAN LOGIN</h1>
  
-        <td>User Name:</td>
+        <td>Username:</td>
         <br>
             <input type="text" name="username" placeholder="Username" id="username"/><br>
         </br>
