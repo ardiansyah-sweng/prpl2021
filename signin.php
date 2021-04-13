@@ -40,11 +40,11 @@ if (ISSET($_POST['submit'])) {
 <html>
   <head>
     
-    <title>Sign Up</title>
+    <title>Sign In</title>
   </head>
   <body>
 
-      <h1>Halaman signup</h1>
+      <h1>Halaman signin</h1>
 
         <form action="" method="POST">
 
@@ -55,7 +55,7 @@ if (ISSET($_POST['submit'])) {
                 <br/>
                 <br/>
                 <button type="submit" name="submit" class="">
-                <p>Sing Up</p></button>
+                <p>Sign in</p></button>
             
         
   </body>
