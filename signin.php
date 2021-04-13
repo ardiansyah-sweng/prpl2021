@@ -8,8 +8,6 @@ $pass_salah1 = "";
 $coba_pass2 = true;
 $pass_salah2 = "";
 
-// include 'koneksi.php';
-
 if (ISSET($_POST['submit'])) {
     $email = $_POST['email'];
     $pass = ($_POST['password']);
@@ -32,12 +30,9 @@ if (ISSET($_POST['submit'])) {
     
     if( !empty($email) and !empty($pass) and $coba_pass1 and $coba_pass2){
       
-      // Data di masukan ke sql (opsional)
-      // mysqli_query($koneksi, $sql_insert);
-      // $sql_insert = "INSERT INTO registrasi VALUES('$username', '$password')";
        
       
-      header("location: dashboard.php");
+      header("location: dashboard1.php");
     }
     
 }
