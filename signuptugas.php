@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
     <title>SIGN UP</title>
     <meta charset="UTF-8">

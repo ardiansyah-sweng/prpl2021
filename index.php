@@ -13,7 +13,7 @@
     
     <form action="index.php" method="post" encypte="multipart/form-data">
     <div class= "login">
-    <h1>HALAMAN LOGIN</h1>
+    <h1>HALAMAN LOGIN</h1>  
  
         <td>Username:</td>
         <br>

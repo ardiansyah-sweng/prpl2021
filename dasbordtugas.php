@@ -8,7 +8,7 @@
     <title>HALAMAN DASHBORD</title>
 </head>
 <body>
-    <center>
+    <center> 
 <br>
     <header>
         <h1>DASHBORD</h1>
