@@ -1,0 +1,63 @@
+.login{
+	position: absolute;
+	top: 10%;
+	left: 40%;
+	box-sizing: border-box;
+	padding: 40px;
+	width: 350px;
+	height: 250px;
+	color: black;
+    
+}
+input[type="text"],
+input[type="password"]{
+	padding: 8px;
+	width: 70%;
+	background-color: transparent;
+	border: 0;
+	color: black;
+	font-size: 10pt;
+	margin: 5px 5px;
+	border: none;
+	border-bottom: 1px solid black;
+}
+h1{
+	margin: 0 0 20px 0;
+	font-weight: bold;
+	font-size: 25px;
+	color: black;
+}
+button[type="submit"] {
+	margin-bottom: 25px;
+	width: 100px;
+	height: 30px ;
+	background: green;
+	border-radius: 2px;
+	border : none;
+	color: white;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	transition: 0,2s ease;
+	cursor: pointer;
+}
+button[type="button"]{
+	margin-bottom: 25px;
+	width: 100px;
+	height: 30px ;
+	background: red;
+	border-radius: 2px;
+	border : none;
+	color: white;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	transition: 0,2s ease;
+	cursor: pointer;
+}
+body{
+	background-image: url(bg.jpg);
+	margin: 0;
+	padding: 0;
+	background-size: cover;
+	font-family: sans-serif;
+	color: white;
+}
