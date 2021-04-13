@@ -1,7 +1,8 @@
 <?php
 
 require_once("index.php");
-require_once("regissignup.php")
+require_once("regissignup.php");
+require_once("dashboard.php");
 
 // $sql_get = "SELECT * FROM prpl2021";
 // $query_data = mysqli_query($koneksi, $sql_get);
@@ -34,17 +35,17 @@ require_once("regissignup.php")
             <label>
               Email Address<span class="req"> : </span>
             </label>
-            <input type="text" required placeholder="Email Adress" required autocomplete="off"/>
+            <input id="email" type="text" required placeholder="Email Adress" required autocomplete="off"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Password<span class="req"> : </span>
             </label>
-            <input type="password" required placeholder="Password" required autocomplete="off"/>
+            <input id="pw" type="password" required placeholder="Password" required autocomplete="off"/>
           </div>
           <label>
-          <input type="submit" placeholder="sign" value="Sign Up"/>
+          <input type="submit" value="Sign Up" onlick="regissignup.php()" />
         </label>
 </body>          
           </form>
