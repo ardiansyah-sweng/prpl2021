@@ -12,7 +12,7 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
 
-    require_once("PHPMailer/Exception.php");
+    require_once("PHPMailer\Exception.php");
     require_once("PHPMailer/OAuth.php");
     require_once("PHPMailer/PHPMailer.php");
     require_once("PHPMailer/POP3.php");
@@ -87,18 +87,4 @@
 
 
  ?>
- <!-- <html> 
-<head>
-</head> 
-<body>
-<Invalid address:  (From): root@localhost> 
-<br> 
-Mailer Error: Invalid address:  (From): root@localhost 
-<link href="sign.css" relstylesheet=""> 
-<form classbox="box">…</form> 
-
-
-// tab-content  
-</form>
-<body> 
-<html> -->
+ 

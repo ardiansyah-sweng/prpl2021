@@ -3,6 +3,7 @@
 require_once("index.php");
 require_once("regissignup.php");
 require_once("dashboard.php");
+require_once("sign.php");
 
 // $sql_get = "SELECT * FROM prpl2021";
 // $query_data = mysqli_query($koneksi, $sql_get);

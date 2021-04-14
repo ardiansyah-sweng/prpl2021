@@ -7,11 +7,3 @@ echo 'Welcome, '. $_SESSION['Username'];
 
 ?>
 
-<!-- <html>
-<body>
-<center>
-    <br><br><br><br>
-    <h4>Welcome,<br>Shafwan Irfandi....!
-</center>
-</body>
-</html> -->
