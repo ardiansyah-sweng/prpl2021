@@ -16,7 +16,6 @@ class database{
 		$insert = mysqli_query($this->koneksi,"insert into tb_user values ('','$email','$password','$nama')");
 		return $insert;
 	}
-
 	function login($email,$password,$remember)
 	{
 		$query = mysqli_query($this->koneksi,"select * from tb_user where username='$email'");

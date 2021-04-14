@@ -27,7 +27,6 @@ if(isset($_POST['register']))
     $_SESSION['email'] = $email;
     header("location: dashboard.php");
 }
-  
 ?>
 <!doctype html>
 <html lang="en" class="h-100">

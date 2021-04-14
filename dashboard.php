@@ -60,7 +60,6 @@ echo 'Welcome, '. $_SESSION['username'];
 
   </div>
 </nav>
-
 <main role="main" class="container">
 
   <div class="starter-template">
