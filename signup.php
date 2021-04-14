@@ -11,7 +11,7 @@ class SignUp
      */
     function sendEmail()
     {
-        //Your code is here
+        
     }
 
     function inputValidation($email, $password)
@@ -34,3 +34,38 @@ class SignUp
         header("location: dashboard.php");
     }
 }
+
+?>
+
+<html>  
+        <head lang="en">  
+            <meta charset="UTF-8">
+            <link rel="stylesheet" type="text/css" href="style.css">
+            <title>Sign Up</title>  
+        </head>  
+
+        <body class="bodylo"> 
+            <center> 
+                    <div class="panel-heading">  
+                        <h3 class="panel-title">Sign Up</h3>  
+                    </div>  
+                    <div class="sign">
+                    </div>
+                    <div class="container">  
+                        <div class="panel-body">  
+                            <form role="form" method="post" action="signup.php"> 
+                                    <div class="form-group"  >  
+                                        <input class="form-control" placeholder="email" name="emeil" type="email" autofocus>  
+                                    </div>  
+                                    <div class="form-group">  
+                                        <input class="form-control" placeholder="Password" name="password" type="password" value="">  
+                                    </div>        
+                                        <input class="btn" type="submit" value="Sign Up" name="signup" >  
+                            </form>  
+                            
+                        </div>  
+                </div>      
+            </center>
+        </body>  
+            
+</html>
