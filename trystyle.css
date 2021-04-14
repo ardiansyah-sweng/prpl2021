@@ -1,0 +1,9 @@
+body{
+    background-image: url(gambar/glass_drops_city_202256_3266x4898.jpg);
+    background-size: 100%;
+}
+
+.card{
+    background-color: rgba(69, 165, 172, 0.6);
+    margin-top: 180px;
+}
