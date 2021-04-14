@@ -65,7 +65,6 @@ echo 'Welcome, '. $_SESSION['username'];
 
   <div class="starter-template">
     <h1>Selamat Datang <?php echo $_SESSION['nama']; ?></h1>
-    <p class="lead">Belajar PHP Sangat Menyenangkan</p>
   </div>
 
 </main><!-- /.container -->
