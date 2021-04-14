@@ -55,9 +55,7 @@ echo 'Welcome, '. $_SESSION['username'];
       </li>
     </ul>
     
-
     <a href="logout.php" class="form-inline my-2 my-lg-0 btn btn-secondary">Logout</a>
-
   </div>
 </nav>
 <main role="main" class="container">

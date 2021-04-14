@@ -101,6 +101,5 @@ if(isset($_POST['register']))
 </form>
   </div>
 </main>
-
 </body>
 </html>
