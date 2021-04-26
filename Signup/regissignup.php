@@ -12,17 +12,20 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
 
-    require_once("PHPMailer\Exception.php");
-    require_once("PHPMailer/OAuth.php");
-    require_once("PHPMailer/PHPMailer.php");
-    require_once("PHPMailer/POP3.php");
-    require_once("PHPMailer/SMTP.php");
+    // $mail=("PHPMailer/Exception.php");
+    // $mail=("PHPMailer/OAuth.php");
+    // $mail=("PHPMailer/PHPMailer.php");
+    // $mail=("PHPMailer/POP3.php");
+    // $mail=("PHPMailer/SMTP.php");
+    require_once("PHPMailer.php");
+    require_once("SMTP.php");
 
 //Create a new PHPMailer instance
     $mail = new PHPMailer();
 
 //Tell PHPMailer to use SMTP
     $mail->isSMTP();
+    $mail->isHTML(true);
 
 //Enable SMTP debugging
 //SMTP::DEBUG_OFF = off (for production use)
@@ -40,7 +43,8 @@
     $mail->Port = 587;
 
 //Set the encryption mechanism to use - STARTTLS or SMTPS
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->SMTPSecure = 'tls';
+    $mail->Subject='PHP Mailer Subject';
 
 //Whether to use SMTP authentication
     $mail->SMTPAuth = true;
@@ -84,7 +88,4 @@
         #    echo "Message saved!";
         #}
     }
-
-
  ?>
- 

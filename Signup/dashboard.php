@@ -1,9 +1,9 @@
 <?php
-session_start('PHPMailer');
-if (!isset($_SESSION['Username'])) {
-    header("Location: regissignup.php");
+session_start('status');
+if (!isset($_SESSION['username'])) {
+    header("Location: signin.php");
 }
-echo 'Welcome, '. $_SESSION['Username'];
+echo 'Welcome, '. $_SESSION['username'];
 
 ?>
-
+ 

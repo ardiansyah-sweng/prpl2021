@@ -2,7 +2,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background: #34495e;
+    background: #202224;
 }
 .box{
     width: 300 px;
@@ -35,7 +35,7 @@ body{
 }
 .box input[type = "text"]:focus,.box input[type = "password"]:focus{
     width: 280px;
-    border-color: rgb(168, 122, 122);
+    border-color: white;
 }
 .box input[type = "submit"]{
     border: 0;
@@ -52,5 +52,5 @@ body{
     cursor: pointer;
 }
 .box input[type = "submit"]:hover,.box input[type = "sign"]:hover{
-    background: #34495e;
+    background: #222527;
 }
