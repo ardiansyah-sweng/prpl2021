@@ -5,13 +5,26 @@ if (isset($_POST['submit'])) {
 
   //Koneksi ke database
   $koneksi = mysqli_connect("localhost", "root", "", "prpl1");
-  include 'koneksi.php';
 
-  //Query mengambil data dari database sesuai input user
+  //Query untuk melakukan pengecekan apakah input sesuai dengan data dalam database
   $cek = mysqli_query($koneksi, "select * from user where email='$email' and pass='$pass'");
   $data = mysqli_num_rows($cek);
 
+  //Log Time Login
+  date_default_timezone_set('Asia/Jakarta');                    //Lokasi 
+  $log_time = date("y-m-d H:i:s");                              //Format waktu 
 
+  //Proses untuk membuat inputan ID menjadi auto increment secara otomatis
+  $query = mysqli_query($koneksi, "SELECT MAX(id) FROM log_history");  //MAX(id) yaitu memilih id paling tinggi 
+  $data = mysqli_fetch_assoc($query);
+  $id = $data['MAX(id)'];
+  $id = $id + 1;
+
+  //Query input data log ke database
+  $sql_insert = "INSERT INTO log_history VALUES('$id', '$email', '$log_time')";
+  mysqli_query($koneksi, $sql_insert);
+
+  //Show Login Email
   if ($data > 0) {
     session_start();
     $_SESSION['username'] = $email;
@@ -21,7 +34,7 @@ if (isset($_POST['submit'])) {
 ?>
     <script language="JavaScript">
       alert('Email belum terdaftar!');
-      // document.location='signin.php';
+      document.location = 'signin.php';
     </script>
 <?php
   }
@@ -80,7 +93,7 @@ if (isset($_POST['submit'])) {
             <div class="col-11">
               <button type="submit" name="submit" class="">Sign In</button>
             </div>
-          </div><br><br><br><br>
+          </div><br><br><br>
           <p class="ex">don't have an account? <b><a href="signup.php">Sign Up</a></b></p>
         </form>
       </div>
