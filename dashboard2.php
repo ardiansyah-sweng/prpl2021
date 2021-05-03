@@ -36,6 +36,7 @@ if (!isset($_SESSION['username'])) {
           <li class="nav-item"><a class="nav-link page-scroll" href="#home">home</a></li>
           <li class="nav-item"><a class="nav-link page-scroll" href="#features">features</a></li>
           <li class="nav-item"><a class="nav-link page-scroll" href="#contact">contact</a></li>
+          <li class="nav-item"><a class="nav-link page-scroll" href="log_history.php">log history</a></li>
           <li class="nav-item"><a class="nav-link page-scroll" onclick="return confirm('Apakah yakin ingin Logout?')" href="signin.php">logout</a></li>
         </ul>
       </div>
