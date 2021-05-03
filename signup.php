@@ -18,9 +18,7 @@ class SignUp
   public $email = "";
   public $pass = "";
   public $panjang_pass = true;
-  // $panjang_pass_msg = "",
   public $panjang_pass1 = true;
-  // $panjang_pass_msg1 = ""; 
 
   public function Mailer()
   {
