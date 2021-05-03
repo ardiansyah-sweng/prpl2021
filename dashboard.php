@@ -31,11 +31,11 @@ if (!isset($_SESSION['username'])) {
         ✔ Success! Please check your email.
       </p>
       <p>Well done. By signing up, you've taken your first step to get specialy offer. <b>Please enjoy!</b></p><br>
-      <p class="ex">already have an account? <b><a href="signin.php">Sign In</a></b></p>
+      <p class="ex">Already have an account? <b><a href="signin.php">Sign In</a></b></p>
+      <p class="ex">Check log history <b><a href="log_history.php">Goooo</a></b></p>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     </div>
   </section>
-  <!-- End Home -->
 </body>
 
 </html>
