@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 06 Apr 2021 pada 07.01
+-- Waktu pembuatan: 03 Bulan Mei 2021 pada 20.15
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.3
 
@@ -25,6 +25,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `log_history`
+--
+
+CREATE TABLE `log_history` (
+  `id` int(11) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `log` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `log_history`
+--
+
+INSERT INTO `log_history` (`id`, `email`, `log`) VALUES
+(1, 'sendyapriatna001@gmail.com', '2021-05-02 14:12:19'),
+(2, 'sendyapriatna001@gmail.com', '2021-05-02 14:12:35'),
+(3, 'sendyapriatna@yahoo.co.id', '2021-04-15 00:00:00');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `user`
 --
 
@@ -38,10 +59,32 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`email`, `pass`) VALUES
-('yourmail@gmail.com', 'bb2084a3939e4c5873cdda6db58b1a8c'),
-('sendyapriatna001@gmail.com', 'md5(qwertY)'),
-('sendyapriatna001@gmail.com', '(pass)'),
-('sendyapriatna001@gmail.com', '4f44d2c5623ed1a89e09ed26a1575a95');
+('sendyapriatna001@gmail.com', 'ee303eafe3805daf297802dcd67f1ccf'),
+('kyubean7@gmail.com', '5ae16da27083175ab7dd2646a142264d'),
+('sendy1900018205@webmail.uad.ac.id', '242532103a6eb1cc873e6790283f1093'),
+('sendyapriatna@yahoo.co.id', '0485b40a7c63ff42ae4a2d685e080c29'),
+('sendyapriatna001@gmail.com', '9306044695afe85214e58a55f3125aae'),
+('kyubean7@gmail.com', 'eb08510649a914527e4affb3817fefa1');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indeks untuk tabel `log_history`
+--
+ALTER TABLE `log_history`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
+--
+
+--
+-- AUTO_INCREMENT untuk tabel `log_history`
+--
+ALTER TABLE `log_history`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
