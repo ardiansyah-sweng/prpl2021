@@ -17,70 +17,87 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+use SignUp as GlobalSignUp;
 
 //Load Composer's autoloader
 require 'vendor/autoload.php';
 
 
-$email = "";
-$password = "";
-$passErr = "";
-$panjang_pass = true;
-$panjang_pass_msg = "";
 
-require_once("koneksi.php");
+class SignUp
+{
+    public $email = "",
+        $password = "",
+        $passErr = "",
+        $panjang_pass = true,
+        $panjang_pass_msg = true;
 
-if (isset($_POST['submit'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    if (empty($email) || empty($password)) {
-        return 'Username or password is empty!';
-    }
-
-    if (strlen($password) < 6) {
-        $panjang_pass = false;
-        $panjang_pass_msg = "Your password Must Contain At Least 6 Characters!";
-    }
-
-    if (!empty($email) and !empty($password) and $panjang_pass) {
-
-        $sql_insert = "INSERT INTO user VALUES('$id', '$email', '$password')";      //memasukkan data kedalam database
-        mysqli_query($connect, $sql_insert);
-
-        session_start();
-        $_SESSION['username'] = $email;
+    function sendEmail()
+    {
         $mail = new PHPMailer(true);
 
-        if (isset($_POST['submit'])) {
-            $email = $_POST['email'];
-            $pass  = $_POST['password'];
+        $mail->isSMTP();                                            //Send using SMTP
+        $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        $mail->Username   = 'edokur258@gmail.com';                     //SMTP username
+        $mail->Password   = 'Kurniawan123';                               //SMTP password
+        $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
-            $mail->isSMTP();                                            //Send using SMTP
-            $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'edokur258@gmail.com';                     //SMTP username
-            $mail->Password   = 'Kurniawan123';                               //SMTP password
-            $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+        //Recipients
+        $mail->setFrom('edokur258@gmail.com', 'Admin');
+        $mail->addAddress($this->email);     //Add a recipient
+        $mail->addReplyTo('edokur258@gmail.com', 'Admin');
 
-            //Recipients
-            $mail->setFrom('edokur258@gmail.com', 'Admin');
-            $mail->addAddress($email);     //Add a recipient
-            $mail->addReplyTo('edokur258@gmail.com', 'Admin');
+        //Content
+        $mail->isHTML(true);                                  //Set email format to HTML
+        $mail->Subject = 'Your account has created';
+        $mail->Body    = ('Hi<br>' . $this->email . '<br>Selamat');       //diisi dengan kata" penerima email
+        if ($mail->send()) {
+            header("location: landing.php");
+        } else {
+            echo "<script>alert('404!')</script>";
+            echo "<meta http-equiv='refresh' content='0; url=signup.php'>";
+        }
+    }
 
-            //Content
-            $mail->isHTML(true);                                  //Set email format to HTML
-            $mail->Subject = 'Your account has created';
-            $mail->Body    = ('Hi<br>' . $email . '<br>Selamat');       //diisi dengan kata" penerima email
-            if ($mail->send()) {
-                header("location: landing.php");
-            } else {
-                echo "<script>alert('404!')</script>";
-                echo "<meta http-equiv='refresh' content='0; url=signup.php'>";
-            }
+    function inputValidation()
+    {
+        require_once("koneksi.php");
+
+        if (empty($this->email) || empty($this->password)) {
+            return 'Username or password is empty!';
+        }
+
+        if (strlen($this->password) < 6) {
+            $this->panjang_pass = false;
+            return "Your password Must Contain At Least 6 Characters!";
+        }
+
+        if (!preg_match("#[0-9]+#", $this->password) && !preg_match("#[A-Z]+#", $this->password)) {
+            $this->panjang_pass_msg = false;
+            return "Your Password Must Contain At Least 1 Number or capital letter!";
+        }
+
+        session_start();
+        $_SESSION['username'] = $this->email;
+
+        if (!empty($this->email) and !empty($this->password) and $this->panjang_pass_msg and $this->panjang_pass) {
+
+            $sql_insert = "INSERT INTO user VALUES('$this->id', '$this->email', '$this->password')";      //memasukkan data kedalam database
+            mysqli_query($connect, $sql_insert);
+
+            $this->sendEmail();
         }
     }
 }
+
+$signup = new SignUp();
+
+if (isset($_POST['submit'])) {
+    $signup->email = $_POST['email'];
+    $signup->password = $_POST['password'];
+}
+
 ?>
 
 <body>
@@ -99,7 +116,7 @@ if (isset($_POST['submit'])) {
                         <div class="form-group mb-3">
                             <label for="exampleInputPassword1">Password</label>
                             <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password" required>
-                            <p class="mt-2"><?php echo $panjang_pass_msg; ?></p>
+                            <p class="mt-2"><?php echo $signup->inputValidation(); ?></p>
                         </div>
                         <div class="d-grid gap-2 mb-3 text-right mr-5 mt-1">
                             <button type="submit" class="btn btn-outline-dark mb-3" name="submit">Daftar</button>
