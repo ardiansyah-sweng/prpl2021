@@ -109,7 +109,7 @@ $supObj = new SignUp(); //signup objek
       <div class="head-container">
         <div class="head-logo">
            <a href="#" class="head-brand">
-             <img src="image/logo.png" alt="">
+             <img src="images/logo.png" alt="">
            </a>
         </div>
       </div>
@@ -121,7 +121,7 @@ $supObj = new SignUp(); //signup objek
 
         <!-- LEFT CONTENT -->
         <div class="left-content">
-            <img src="image/character 20.svg" alt="">
+            <img src="images/character 20.svg" alt="">
         </div>
 
         <!-- CENTER CONTENT -->
@@ -157,7 +157,7 @@ $supObj = new SignUp(); //signup objek
         
         <!-- RIGHT CONTENT -->
         <div class="right-content">
-            <img src="image/character 15.svg" alt="">
+            <img src="images/character 15.svg" alt="">
         </div>
       </div>
     </section>

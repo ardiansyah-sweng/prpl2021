@@ -26,7 +26,7 @@ if (!isset($_SESSION['username'])) {
       <div class="head-container">
         <div class="head-logo">
            <a href="#" class="head-brand">
-             <img src="image/logo.png" alt="">
+             <img src="images/logo.png" alt="">
            </a>
         </div>
         <div class="nav">

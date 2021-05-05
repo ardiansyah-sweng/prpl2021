@@ -91,7 +91,7 @@ $sinObj->session();
       <div class="head-container">
         <div class="head-logo">
            <a href="#" class="head-brand">
-             <img src="image/logo.png" alt="">
+             <img src="images/logo.png" alt="">
            </a>
         </div>
       </div>
@@ -103,7 +103,7 @@ $sinObj->session();
 
         <!-- LEFT CONTENT -->
         <div class="left-content">
-            <img src="image/character 20.svg" alt="">
+            <img src="images/character 20.svg" alt="">
         </div>
 
         <!-- CENTER CONTENT -->
@@ -139,7 +139,7 @@ $sinObj->session();
         
         <!-- RIGHT CONTENT -->
         <div class="right-content">
-            <img src="image/character 15.svg" alt="">
+            <img src="images/character 15.svg" alt="">
         </div>
       </div>
     </section>
