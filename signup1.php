@@ -1,85 +1,68 @@
-<?php
-class SignUp
-{
+<?php include 'koneksi.php'; ?>
+<!DOCTYPE html>
 <HTML>
 <HEAD>
-<TITLE>User Registration</TITLE>
-<link href="assets/css/phppot-style.css" type="text/css"
-	rel="stylesheet" />
-<link href="assets/css/user-registration.css" type="text/css"
-	rel="stylesheet" />
-<script src="vendor/jquery/jquery-3.3.1.js" type="text/javascript"></script>
+<TITLE>Sign Up</TITLE>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
 </HEAD>
 <BODY>
-	<div class="phppot-container">
-		<div class="sign-up-container">
-			<div class="login-signup">
-				<a href="index.php">Login</a>
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">SignUp</h2>
+				</div>
 			</div>
-			<div class="">
-				<form name="sign-up" action="" method="post"
-					onsubmit="return signupValidation()">
-					<div class="signup-heading">Registration</div>
-				<?php
-    if (! empty($registrationResponse["status"])) {
-        ?>
-                    <?php
-        if ($registrationResponse["status"] == "error") {
-            ?>
-				    <div class="server-response error-msg"><?php echo $registrationResponse["message"]; ?></div>
-                    <?php
-        } else if ($registrationResponse["status"] == "success") {
-            ?>
-                    <div class="server-response success-msg"><?php echo $registrationResponse["message"]; ?></div>
-                    <?php
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-5">
+					<div class="login-wrap p-4 p-md-5">
+		      	<div class="icon d-flex align-items-center justify-content-center">
+		      		<span class="fa fa-user-o"></span>
+		      	</div>
+						<form action="#" class="login-form">
+		      		<div class="form-group">
+		      			<input type="text" class="form-control rounded-left" placeholder="Username" required>
+		      		</div>
+	            <div class="form-group d-flex">
+	              <input type="password" class="form-control rounded-left" placeholder="Password" required>
+	            </div>
+
+	            <div class="form-group">
+	            	<button type="submit" class="btn btn-primary rounded submit p-3 px-5">SIGN UP</button>
+	            </div>
+	          </form>
+	        </div>
+				</div>
+			</div>
+
+<script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  </BODY>
+</HTML>
+  <?php
+    function inputValidation($username, $password)
+    {
+        if (empty($username) || empty($password)) {
+            return 'Username or password is empty!';
         }
-        ?>
-				<?php
+        if (!filter_var($username, FILTER_VALIDATE_EMAIL)) {
+            return "Invalid email format!";
+        }
+        if (strlen($password) < 6) {
+            return "Your Password Must Contain At Least 6 Characters!";
+        }
+        if (!preg_match("#[0-9]+#", $password) && !preg_match("#[A-Z]+#", $password)) {
+            return "Your Password Must Contain At Least 1 Number or capital letter! ";
+        }
+        
+        session_start();
+        $_SESSION['username'] = $username;
+        header("location: dasboard1.php");
     }
-    ?>
-				<div class="error-msg" id="error-msg"></div>
-					<div class="row">
-						<div class="inline-block">
-							<div class="form-label">
-								Username<span class="required error" id="username-info"></span>
-							</div>
-							<input class="input-box-330" type="text" name="username"
-								id="username">
-						</div>
-					</div>
-					<div class="row">
-						<div class="inline-block">
-							<div class="form-label">
-								Email<span class="required error" id="email-info"></span>
-							</div>
-							<input class="input-box-330" type="email" name="email" id="email">
-						</div>
-					</div>
-					<div class="row">
-						<div class="inline-block">
-							<div class="form-label">
-								Password<span class="required error" id="signup-password-info"></span>
-							</div>
-							<input class="input-box-330" type="password"
-								name="signup-password" id="signup-password">
-						</div>
-					</div>
-					<div class="row">
-						<div class="inline-block">
-							<div class="form-label">
-								Confirm Password<span class="required error"
-									id="confirm-password-info"></span>
-							</div>
-							<input class="input-box-330" type="password"
-								name="confirm-password" id="confirm-password">
-						</div>
-					</div>
-					<div class="row">
-						<input class="btn" type="submit" name="signup-btn"
-							id="signup-btn" value="Sign up">
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-}
+?>
+
+
