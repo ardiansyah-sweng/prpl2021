@@ -1,6 +1,3 @@
 <?php
-$host           = "localhost";
-$user           = "root";
-$password       = "";
-$database       = "users";
-$connect        = mysqli_connect($host, $user, $password, $database);
+$connect        = mysqli_connect("localhost", "root", '', "users");
+$connect_history = mysqli_connect("localhost", "root", '', "sweng2021");
