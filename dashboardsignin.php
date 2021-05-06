@@ -8,8 +8,8 @@
   <head>
     
     <section class="home" id="home">
-        <h1>SELAMAT DATANG</h1>   
-        <p><?php echo $_SESSION['username']; ?></p>
+        <h1 align="center">SELAMAT DATANG</h1>   
+        <p align="center"><?php echo $_SESSION['username']; ?></p>
     </section>  
 
   </body>
