@@ -3,7 +3,7 @@ include 'coronaAPI.php';
 
 session_start();
 if (!isset($_SESSION['username'])) {
-    header("Location: signup.php");
+    header("Location: ../no4/signup.php");
 }
 
 
