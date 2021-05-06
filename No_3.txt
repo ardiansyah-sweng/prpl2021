@@ -1,0 +1,10 @@
+3. 
+git config --global user.name "FadelNurAkhmad"
+git config --global user.email "fadelnurakhmad1@gmail.com"
+git clone gh repo clone ardiansyah-sweng/prpl2021
+git remote set-url origin https://github.com/FadelNurAkhmad/prpl2021
+git push -u origin FadelNurAkhmad_E_1900018237
+git add *
+git commit -m "prpl"
+git log
+git status
