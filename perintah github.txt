@@ -1,0 +1,8 @@
+$ git clone gh repo clone ardiansyah-sweng/prpl2021
+$ git checkout -b aderusy_e_1900018273_UTS
+$ git branch
+$ git add .
+$ git status
+$ git commit -m "UTS prpl 2021"
+$ git remote set-url origin https://github.com/aderusy/prpl2021
+$ git push -u origin aderusy_e_1900018273_UTS
