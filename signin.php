@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
   $data = mysqli_num_rows($cek);
 
   //Log Time Login
-  date_default_timezone_set('Asia/Jakarta');                    //Lokasi 
+  date_default_timezone_set('Asia/Jakarta');                    //Lokasi Waktu
   $log_time = date("y-m-d H:i:s");                              //Format waktu 
 
   //Proses untuk membuat inputan ID menjadi auto increment secara otomatis
@@ -26,10 +26,10 @@ if (isset($_POST['submit'])) {
 
   //Show Login Email
   if ($data > 0) {
-    session_start();
-    $_SESSION['username'] = $email;
-    $row = mysqli_fetch_array($cek);
-    header("location: dashboard2.php");
+    // session_start();
+    // $_SESSION['username'] = $email;
+    // header("location: dashboard2.php");
+    header("location: film.php");
   } else {
 ?>
     <script language="JavaScript">
