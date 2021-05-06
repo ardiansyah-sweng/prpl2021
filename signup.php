@@ -34,3 +34,7 @@ class SignUp
         header("location: dashboard.php");
     }
 }
+
+?>
+
+
