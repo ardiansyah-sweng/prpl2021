@@ -1,0 +1,8 @@
+git config --global user.name "DeryApriatama"
+git vonfig --global user.email "derytama02@gmail.com"
+git clone gh repo clone ardiansyah-sweng/prpl2021
+- Melihat list email dan username atau nama branch kita
+git config --list- Melihatriwayat perubahan
+git log
+- Melihat status working tree
+git status
