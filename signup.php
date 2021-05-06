@@ -1,36 +1,57 @@
-<?php
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SIGN UP</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+     <form action="signup-check.php" method="post">
+     	<h2>SIGN UP</h2>
+     	<?php if (isset($_GET['error'])) { ?>
+     		<p class="error"><?php echo $_GET['error']; ?></p>
+     	<?php } ?>
 
-/**
- * SignUp
- * 
- */
-class SignUp
-{
-    /**
-     * Send an email to new user
-     */
-    function sendEmail()
-    {
-        //Your code is here
-    }
+          <?php if (isset($_GET['success'])) { ?>
+               <p class="success"><?php echo $_GET['success']; ?></p>
+          <?php } ?>
 
-    function inputValidation($email, $password)
-    {
-        if (empty($email) || empty($password)) {
-            return 'Username or password is empty!';
-        }
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            return "Invalid email format!";
-        }
-        if (strlen($password) < 6) {
-            return "Your Password Must Contain At Least 6 Characters!";
-        }
-        if (!preg_match("#[0-9]+#", $password) && !preg_match("#[A-Z]+#", $password)) {
-            return "Your Password Must Contain At Least 1 Number or capital letter! ";
-        }
-        
-        session_start();
-        $_SESSION['username'] = $email;
-        header("location: dashboard.php");
-    }
-}
+          <label>Name</label>
+          <?php if (isset($_GET['name'])) { ?>
+               <input type="text" 
+                      name="name" 
+                      placeholder="Name"
+                      value="<?php echo $_GET['name']; ?>"><br>
+          <?php }else{ ?>
+               <input type="text" 
+                      name="name" 
+                      placeholder="Name"><br>
+          <?php }?>
+
+          <label>User Name</label>
+          <?php if (isset($_GET['uname'])) { ?>
+               <input type="text" 
+                      name="uname" 
+                      placeholder="User Name"
+                      value="<?php echo $_GET['uname']; ?>"><br>
+          <?php }else{ ?>
+               <input type="text" 
+                      name="uname" 
+                      placeholder="User Name"><br>
+          <?php }?>
+
+
+     	<label>Password</label>
+     	<input type="password" 
+                 name="password" 
+                 placeholder="Password"><br>
+
+          <label>Re Password</label>
+          <input type="password" 
+                 name="re_password" 
+                 placeholder="Re_Password"><br>
+
+     	<button type="submit">Sign Up</button>
+          <a href="index.php" class="ca">Already have an account?</a>
+     </form>
+</body>
+</html>

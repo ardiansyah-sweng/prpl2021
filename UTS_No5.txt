@@ -1,0 +1,5 @@
+Program ini pastinya mengkoneksikan dengan database dari data-data user yang dimasukkan. Dari program sign-in dan 
+sign up yang saya lakukan ini mungkin bisa dilihat bahwa sedikit rumit untuk dimengerti dikarenakan source yang 
+terlalu panjang. Berdasarkan dari contoh kuliah terdapat penggunaan function seperti function sendEmail() dan 
+function inputValidation. Menurut saya kemangkusan pada program  lebih ringkas dalam segi source code maupun 
+prosesnya serta lebih simple, mudah dipahami dan cepat, dibandingkan program yang saya buat.
