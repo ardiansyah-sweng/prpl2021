@@ -1,0 +1,15 @@
+5. Analisis program sign-in dan sign-up!
+    Pada kasus ini, saya membuat 2 file, yaitu:
+    a)File index.php, digunakan untuk menyimpan kodingan sign-in & sign-up
+    b)File dashboard.php, digunakan sebagai informasi bahwa berhasil login
+
+	Analisis file index.php:
+    -[pada baris ke 11] adalah sebuah fungsi untuk memanggi koneksi ke databasenya. Karena pada kasus kali ini data yang di masukkan akan saya simpan ke dalam database.
+    -[pada baris ke 13-28] adalah function untuk proses login. Untuk loginnya saya membutuhkan username & password yang sebelumnya di gunakan untuk mendaftar 
+    -[pada baris ke 29-69] adalah function untuk proses mendaftarnya. Pada function daftar ini terdapat beberapa fungsi.
+    -[pada baris ke 36-47] adalah function untuk mendambah data ke dalam database
+    -Ketika berhasil mendaftar, maka harus mengirim aktivasi ke email yang di masksud
+    -[pada baris ke 49-62] adalah proses mengirim aktivasi ke email
+    -[pada baris ke 56] jika berhasil mendaftar, maka akan di wajibkan untuk login terlebih dahulu.
+    -[pada baris ke 79-91] adalah script form loginnya, disini saya menggunakan metode POST untuk mengirim data yang di masukkan
+    -[pada baris ke 92-108] adalah script form mendaftarnya, sama dengan form login, disini saya menggunakan metode POST untuk mengirim data yang di masukkan

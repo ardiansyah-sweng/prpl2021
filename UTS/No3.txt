@@ -1,0 +1,8 @@
+3. Terapkanlah perintah perintah utama git pada source codeprogram anda!
+    - Pada VS Code, klik menu View > Terminal (Ctrl +)
+    - Muncul command prompt
+    - Ketik perintah :
+        git config --global user.name "rifqiibadi". Tekan enter
+    
+    - Ketik perintah :
+        git config --global user.email "rifqiibadibosma354@gmail.com". Tekan enter
