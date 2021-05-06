@@ -1,0 +1,7 @@
+$ git config --global user.name "verierariski"
+$ git config --global user.email "verierariski07082000@gmail.com"
+$ git clone gh repo clone ardiansyah-sweng/prpl2021
+$ git remote set-url origin https://github.com/verierariski/prpl2021     
+$ git push -u origin Veriera Riski H_D_1900018223
+$ git add *
+$ git commit -m "prpl"

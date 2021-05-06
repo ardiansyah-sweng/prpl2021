@@ -1,0 +1,21 @@
+body {margin: 0; font-family: sans-serif;}
+
+.header {margin: 20px; color: white; background: green; height: 70px;}
+
+.logo {float: left;}
+
+.navbar {float: right;}
+
+.navbar ul{list-style: none; padding-top: 10px;}
+
+.navbar ul li{display: inline; margin: 10px;}
+
+.navbar ul li a{text-decoration: none; color: white; }
+
+.navbar ul li a:hover {border-bottom: 2px solid white;}
+
+.footer {text-align: center; margin: 20px; color: white; background: green; height: 70px;}
+
+.footer p{padding-top:25px;}
+
+.footer a{text-decoration: none; color: white; }
