@@ -1,0 +1,5 @@
+git config --global user.name "HaniyahAzzah291"
+git config --global user.email "haniyahazah@gmail.com"
+git config --list
+git config --get remote.origin.url
+git remote set url origin
