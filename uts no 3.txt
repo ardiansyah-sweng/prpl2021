@@ -1,0 +1,3 @@
+git config --global user.name "SHANYSASNITAANDRIANI"
+git config --global user.email shany1900018176@webmail.uad.ac.id
+git config --list
