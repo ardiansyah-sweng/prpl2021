@@ -14,6 +14,7 @@ $data = mysqli_query($koneksi, "SELECT * FROM log_history");
 $jumlah_data = mysqli_num_rows($data);
 $total_halaman = ceil($jumlah_data / $batas);                           //Syntax untuk membulatkan jumlah page
 
+date_default_timezone_set('Asia/Jakarta');  							//Lokasi waktu
 $tanggal_sekarang = strtotime(date('Y-m-d H:i:s'));
 $awal = date('Y-m-d H:i:s', strtotime('-7 day', $tanggal_sekarang));    //Hari sekarang dikurang 7
 $akhir = date('Y-m-d H:i:s');                                           //Waktu sekarang
