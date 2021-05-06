@@ -1,16 +1,15 @@
-
 <?php
 session_start();
 include_once 'user.php';
 $user = new User(); $id = $_SESSION['id'];
 if (!$user->get_session()){
- header("location:signup.php");
+    header("location:signup.php");
 }
- 
+
 if (isset($_GET['q'])){
- $user->user_logout();
- header("location:signin.php");
- }
+    $user->user_logout();
+    header("location:signin.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +22,7 @@ Home
  h1{font-family:'Georgia', Times New Roman, Times, serif;}
 --></style>
 <div id="container">
-<div id="header"><a href="home.php?q=logout">LOGOUT</a></div>
+<div id="header"><a href="signin.php?q=logout">LOGOUT</a></div>
 <div id="main-body">
 <h1>Hello <?php $user->get_username($id); ?></h1>
 </div>

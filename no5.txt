@@ -1,0 +1,9 @@
+analisis source code sign in sign up:
+dari aspek kesederhanaan program yang saya buat tidak terlalu sederhana.
+karena saya menggunakan bahasa selain PHP yaitu Javascript untuk fungsi alert dan HTML untuk formnya.
+dari aspek mudah dipahami, menurut saya program ini cukup mudah dipahami karena peletakan file yang rapi,
+seperti file config.php yang berisi source code untuk mengkoneksikan php dengan database jadi apabila
+didalam file sign in atau sign up ingin menghubungkan ke database cukup menuliskan nama filenya saja, 
+begitu juga dengan file user yang berisi proses dari sign up agar data yang diinputkan bisa masuk kedalam database
+yang sudah dibuat sebelumnya dan proses dari sign in yang memeriksa apakah username, email atau password yang
+diinputkan ada didalam database, jika ada maka user berhasil melakukan sign in dan akan diarahkan ke halaman dashboard.

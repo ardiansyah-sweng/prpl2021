@@ -1,19 +1,19 @@
 <?php
-include_once 'user.php';  $user = new User(); // Checking for user logged in or not
- 
- if (isset($_REQUEST['submit'])){
- extract($_REQUEST);
- $register = $user->reg_user($username, $password, $email);
- if ($register) {
- // Registration Success
- echo 'Registration successful <a href="signin.php">Click here</a> to sign in';
- } else {
- // Registration Failed
- echo 'Registration failed. Email or Username already exits please try again';
- }
+include_once 'user.php';  
+$user = new User(); 
+
+if (isset($_REQUEST['submit'])){
+    extract($_REQUEST);
+    $signup = $user->validation($username, $password, $email);
+    if ($signup) {
+        // Registration Success
+        echo 'Registration successful <a href="signin.php">Click here</a> to sign in';
+    } else {
+        // Registration Failed
+        echo 'Registration failed. Email or Username already exits please try again';
+    }
  }
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -30,15 +30,15 @@ include_once 'user.php';  $user = new User(); // Checking for user logged in or 
  alert( "Enter name." );
  return false;
  }
- else if(form.uname.value == ""){
+ else if(form.username.value == ""){
  alert( "Enter username." );
  return false;
  }
- else if(form.upass.value == ""){
+ else if(form.password.value == ""){
  alert( "Enter password." );
  return false;
  }
- else if(form.uemail.value == ""){
+ else if(form.email.value == ""){
  alert( "Enter email." );
  return false;
  }

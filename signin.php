@@ -2,7 +2,7 @@
 session_start();
 	include_once 'user.php';
 	$user = new User();
- 
+	
 	if (isset($_REQUEST['submit'])) {
 		extract($_REQUEST);
 	    $login = $user->check_login($emailusername, $password);
@@ -21,12 +21,10 @@ session_start();
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style><!--
-            #container{width:400px; margin: 0 auto;}
- 
+    #container{width:400px; margin: 0 auto;}
 --></style>
  
 <script type="text/javascript" language="javascript">
- 
             function submitlogin() {
                 var form = document.login;
 				if(form.emailusername.value == ""){
@@ -38,7 +36,6 @@ session_start();
 					return false;
 				}
 			}
- 
 </script>
  
 <span font-size: 13px; font-style: normal; line-height: 1.5;">
@@ -58,14 +55,14 @@ session_start();
 <tr>
 <td></td>
 <td><input onclick="return(submitlogin());" type="submit" name="submit" value="Sign In" /></td>
-</tr>
+</tr></center>
 <tr>
 <td></td>
-<td><a href="signup.php">Register new user</a></td>
+<td>Don't Have an Account?<a href="signup.php">Sign Up here</a></td>
 </tr>
 </tbody>
 </table>
-</form></center></div>
+</form></div>
 </body>
 </html>
 
