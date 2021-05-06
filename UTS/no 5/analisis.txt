@@ -1,0 +1,8 @@
+Analisis :
+
+1. Pada function sendMail berfungsi untuk mengirimkan alert atau notifikasi pada email bahwa saat Sign Up telah berhasil, dan pada inputValidation untuk mengecek validas email dan password pada sign up dengan sesuai kriteria yang telah ditentukan. Dengan mekanismenya jika sudah melewati beberapa proses di kodingan tersebut akan dialihkan ke dashbord.php
+
+2. Pada Sign In terdapat requiments yang emailnya harus valid dan wajiib diisi, kemudian password minimal yang di maksukan sepanjang 6 karakter dengan mengandung minimal 1 huruf kapital atau angka, ada beberapa kondisi jika email atau password salah yang pertama akan tetap di page Sign In, dan akan muncul peringatan untuk mengisi email dan password yang benar atau valid.
+
+Jika dibandingkan dengan program yang saya buat, program dari saya tidak mengirimkan alert atau notifikasi ke email, melainkan jika berhasil Sign In atau Sign Up hanya memberikan alert pada message box pada di atas dashbord dengan menggunakan javascript.
+Dari kodingan tersebut antara programnya bapak dan program saya sendiri yang saya lihat, dengan demikian kesimpulan yang saya ambil untuk yang lebih ringkas yaitu kodingan atau programnya bapak, sedangkan yang mudah dipahami yaitu dari kodingan saya sendiri. Dikarenakan kodingan yang saya buat yaitu dari hasil saya sendiri maka jika disuruh melihat dari kodingan tersebut untuk yang lebih mudah tetep kodingan yang saya bikin, ya walaupun program yang bapak berikan sangatlah ringkas tetapi kita belum belajar tentang bagaimana cara mengirimkan pesan ke email dari hasil submit di website atau program.
