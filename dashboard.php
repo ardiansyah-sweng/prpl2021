@@ -11,7 +11,7 @@ echo "<script>alert('Welcome');</script>, ". $_SESSION['username'];
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Login History</title>
+    <title>Dashboard</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
@@ -70,7 +70,7 @@ echo "<script>alert('Welcome');</script>, ". $_SESSION['username'];
               class="dropdown-menu dropdown-menu-right"
               aria-labelledby="navbarDropdown"
             >
-              <a class="dropdown-item" href="login history.php">Login history</a>
+              <a class="dropdown-item" href="#">Action</a>
               <a class="dropdown-item" href="#">Another action</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="logout.php">Log Out</a>
@@ -144,36 +144,69 @@ echo "<script>alert('Welcome');</script>, ". $_SESSION['username'];
         <main>
           <div class="container-fluid">
             <div class="row">
-              <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Email</th>
-                        <th>History</th>
-                    </tr>
-                </thead>
-                <tbody>
-                  <?php
-                    $no = 1;
-                    while ($result = mysqli_fetch_array($data_log_history)) {
-                  ?>
-                  <tr>
-                    <td>
-                        <p class="font-weight-bold"><?php echo $no++ ?></p>
-                    </td>
-                    <td>
-                        <p><?php echo $result['email'] ?></p>
-                    </td>
-                    <td>
-                        <p><?php echo $result['sign_time'] ?></p>
-                    </td>
-                  </tr>
-                  <?php
-                    }
-                  ?>
-                </tbody>
-              </table>
+              <div class="col-md-4 my-3">
+                <div class="bg-mattBlackLight px-3 py-3">
+                  <h4 class="mb-2">New Clients</h4>
+                  <div class="progress" style="height: 16px;">
+                    <div
+                      class="progress-bar bg-warning text-mattBlackDark"
+                      role="progressbar"
+                      style="width: 25%;"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
+                      25
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 my-3">
+                <div class="bg-mattBlackLight px-3 py-3">
+                  <h4 class="mb-2">New Projects</h4>
+                  <div class="progress" style="height: 16px;">
+                    <div
+                      class="progress-bar bg-info text-mattBlackDark"
+                      role="progressbar"
+                      style="width: 50%;"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
+                      50
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 my-3">
+                <div class="bg-mattBlackLight p-3">
+                  <h4 class="mb-2">Completed</h4>
+                  <div class="progress" style="height: 16px;">
+                    <div
+                      class="progress-bar bg-success"
+                      role="progressbar"
+                      style="width: 80%;"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
+                      80
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="bg-mattBlackLight my-2 p-3">
+                  MASIH KOSONG
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="bg-mattBlackLight my-2 p-3">
+                  MASIH KOSONG
+                </div>
+              </div>
             </div>
           </div>
         </main>
