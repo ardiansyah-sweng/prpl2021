@@ -1,0 +1,12 @@
+5.Dari aspek kesederhanaan source code yang saya buat masih terbilang sederhana karena 
+sebagian besar meggunakan php procedural dan hanya pada signup.php yang menggunakan OOP 
+dalam pembuatannya. Maka dari itu php procedural masih bisa dipahami karena bentuknya 
+sudah umum diketahui banyak orang. Dengan alur program yang mudah di pahami membuat php 
+procedural mejadi banyak pilihan namun program menjadi biasa saja jika di bandingkan 
+dengan program yang memakai konsep OOP. Jika di komparasikan dengan contoh yang ada, 
+program yang meggunakan OOP lebih terstruktur di bandingkan dengan php procedural dan 
+memungkinkan untuk penggunaan framework kedepannya. Karena framework pasti menggunakan OOP. 
+
+Kesimpulannya jika dari aspek kesederhanaan dan mudah dipahami maka php procedural 
+lebih sederhana dan bisa di pahami oleh banyak orang disbanding dengan php yang 
+menggunakan OOP karena belum tentu semua orang paham tentang OOP.
