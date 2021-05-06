@@ -1,0 +1,22 @@
+-> Analisis Program dan Perbandingan:
+a. Analisa program yang saya buat
+- Pada program saya terdapat lebih dari satu variable untuk penggunaan pada setiap percabangan yang untuk persyaratan password.
+- Pada perancangan email harus menggunakan gmail.
+- Pada perancangan password yang memfilter kriteria password harus lebih dari 6 karakter kemudian pada percabangan if yang memfilter bahwa password harus terdapat angka dan huruf.
+- Setiap output yang meruapakan pemberitahuan kesalahan password dan segala macam ditampung dalam variable.
+- Berbeda dengan codingan di e-learning yang setiap percabangan if yang mengoperasikan password menggunakan variable yang sama.
+
+b. Perbandingan dengan contoh di e-learning:
+- line 7 terdapat sebuah deklarasi class bernama SignUp
+- line 12 Terdapat sebuah deklarasi Function bernama sendEmail dan digunakan untuk menempatkan source code untuk veritifikasi email
+- line 17 terdapat sebuah function inputValidation yang digunakan untuk memveritifikasi email dan password yang dimasukkan  apakah sesuai dengan ketentuan
+- line 19 mengecek kondisi jika email atau password kosong maka akan menampilkan error username or password is empty"
+- line 22 mengecek apakah email yang dimasukkan sesuai dengan email yang didaftarkan atau tidak
+- line 25 mengecek password apabila jumlah password kurang dari 6 maka akan memunculkan error yaitu harus memasukkan password perjumlah lebih dari 6
+- line 28 digunakan untuk mengecek dimana password harus memiliki setidaknya sebuah huruf dan angka
+- line 32 dan 33 digunakan untuk menyimpan email yang dimasukkan
+- line 34 digunakan sebagai hyperlink untuk berpindah halaman
+- Perbedaan yang paling terlihat saat menggunakan OOP dan tidak menggunakan OOP yaitu adalah saat running program akan berbeda dan juga pada saat 
+terjadi error pada OOP berbeda dengan php yang tidak menggunakan OOP dan menurut saya lebih simple kita menggunakan OOP karena lebih rapi susunannya.
+- Menurut saya lebih mudah menggunakan php Procedural karena tidak memerlukan sesuatu yang lebih kompleks dan 
+langsung ke inti dari program yang harus dibuat serta php  procuderal lebih mudah dipahami dari pada php yang menggunakan OOP.
