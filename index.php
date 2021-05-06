@@ -43,7 +43,7 @@ if(isset($_POST['login'])){
 
 <header>
     <h1>LOGIN</h1>
-    <h5>Masukkan Username dan Password Anda!</h5>
+    <h5>Masukkan Email dan Password Anda!</h5>
 </header>
 
     <?php if(isset($error)) : ?>
