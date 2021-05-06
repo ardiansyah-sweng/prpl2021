@@ -1,0 +1,7 @@
+3. Git commands
+
+$ git clone https://github.com/ardiansyah-sweng/prpl2021.git
+$ git remote set-url https://github.com/rafa087/prpl2021.git
+$ git push -u origin Rafa-Nafisah_Int_1900018087
+$ git add *
+$ git commit -m "first commit"
