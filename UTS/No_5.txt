@@ -1,0 +1,19 @@
+Perbedaan dari kedua program tersebut :
+- Program Saya, kode program tersebut lebih panjang dari program kedua kemudian 
+pada program pertama terdapat inputan nama sedangkang yang kedua tidak. Program 
+pertama terdapat include db.php yaitu untuk menginputkan data ke data base apabila 
+sudah benar semua, kemudian ada function cek_input pada password yang berfungsi untuk 
+menghapus spasi atau karakter whitespace dari sebuah string, menghapus atau menghilangkan 
+karakter backslashes dan menontaktifkan seluruh perintah – perintah html mengubah special.
+
+- Program dari Dosen, program tersebut cukup ringkas dan lebih evisien, karena tidak 
+memakan banyak baris dari pada program yang pertama, terus ada SESSION yang menghubungkan 
+ke dashboard apabila sudah benar inputannya. Akan tetapi program kude tidak ada fungsi untuk 
+mengecek passwoard lebih lanjut seperti trim, stripslashes dan htmlspecialchars.
+
+Analisis kedua program :
+Berdasarkan analisis dari saya, program yang ringkas dan mudah dipahami adalah program yang 
+kudua atau program daro dosen, karena dalam segi baris lepih pendek sehingga tidak memakan 
+waktu yang lama dalam algoritma, kemudian dari segi pemahaman lebih mudah dipahami karena 
+cukup singkat dan padat dalam algoritma tersebut. Akan tetapi program kedua belum tersambung 
+ke data base dan belum ada cek passwoard lanjutan.
