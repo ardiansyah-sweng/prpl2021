@@ -5,7 +5,7 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <style>
   	body{
-	        background-repeat: no-repeat;
+	    background-repeat: no-repeat;
 		background-size:cover
 	}
 	#log{
@@ -20,11 +20,11 @@
          padding: 14px 46px;
     }
 	#title {
-                font-family: "Raleway Thin", sans-serif;
-                letter-spacing: 6px;
-                padding-bottom: 22px;
-                padding-top: 12px;
-                text-align: center;
+            font-family: "Raleway Thin", sans-serif;
+            letter-spacing: 6px;
+            padding-bottom: 22px;
+            padding-top: 12px;
+            text-align: center;
 	}
 	.linetitle {
                 background: -webkit-linear-gradient(right, #6E2C00, #935116); 
