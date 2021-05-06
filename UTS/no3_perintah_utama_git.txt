@@ -1,4 +1,4 @@
-3.	$ git clone gh repo clone ardiansyah-sweng/prpl2021
+$ git clone gh repo clone ardiansyah-sweng/prpl2021
 $ git remote set-url origin https://github.com/aqslindr/prpl2021     
 $ git push -u origin Aqsalya Indira_D_1900018185
 $ git add *
