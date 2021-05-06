@@ -42,8 +42,6 @@ use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
 require 'vendor/autoload.php';
-
-
 $email = "";
 $password = "";
 $passErr = "";
@@ -51,7 +49,6 @@ $panjang_pass = true;
 $panjang_pass_msg = "";
 
 require_once("koneksi.php");
-
 if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
