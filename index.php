@@ -1,15 +1,15 @@
-<?php 
+ <?php 
 error_reporting (0);
 session_start();
 if($_SESSION['id']==""){
         header("location:login.php");
    
     }
-     require 'koneksi.php';
+     require 'config/koneksi.php';
  ?>
  <?php  
 $cid=$_SESSION['id'];
-$ceksess=mysqli_query($conn, "SELECT * FROM log21 where id='$cid'");
+$ceksess=mysqli_query($conn, "SELECT * FROM uts_prpl where id='$cid'");
 $row=mysqli_fetch_array($ceksess);
  ?>
 <!DOCTYPE html>
