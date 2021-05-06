@@ -43,9 +43,9 @@
                 </div>
             </div>
         </div>
-        <tr>
-            <div class="row justify-content-center" id="list">
-            </div>
+        <br>
+        <div class="row justify-content-center" id="list">
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
