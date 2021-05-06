@@ -1,105 +1,60 @@
-<?php
-include_once('koneksi.php');
-$database = new database();
-if(isset($_POST['register']))
-{
-    $username = $_POST['username'];
-    $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
-    $nama = $_POST['nama'];
-    if($database->register($username,$password,$nama))
-    {
-      header('location:login.php');
-    }
-    if (empty($email) || empty($password)) {
-        return 'Username or password is empty!';
-    }
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        return "Invalid email format!";
-    }
-    if (strlen($password) < 6) {
-        return "Your Password Must Contain At Least 6 Characters!";
-    }
-    if (!preg_match("#[0-9]+#", $password) && !preg_match("#[A-Z]+#", $password)) {
-        return "Your Password Must Contain At Least 1 Number or capital letter! ";
-    }
-    
-    session_start();
-    $_SESSION['email'] = $email;
-    header("location: dashboard.php");
-}
-?>
-<!doctype html>
-<html lang="en" class="h-100">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.5">
-    <title>Register Form</title>
- 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sticky-footer/">
- 
-    <!-- Bootstrap core CSS -->
-<link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
- 
- 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
- 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="sticky-footer.css" rel="stylesheet">
-  </head>
-  <body class="d-flex flex-column h-100">
-    <!-- Begin page content -->
-<main role="main" class="flex-shrink-0">
-  <div class="container">
-    <h1 class="mt-5">Register Form</h1>
-    <p class="lead">Silahkan Daftarkan Identitas Anda</p>
-    <hr/>
-    <form method="post" action="">
-
-    <div class="form-group row">
-      <label for="nama" class="col-sm-2 col-form-label">Nama</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
-      </div>
-    </div>
-
-    <div class="form-group row">
-      <label for="email" class="col-sm-2 col-form-label">Email</label>
-      <div class="col-sm-10">
-        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
-      </div>
-    </div>
- 
-  <div class="form-group row">
-    <label for="password" class="col-sm-2 col-form-label">Password</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-    </div>
-  </div>
-  <div class="form-group row">
-    <div class="col-sm-10">
-      <a href="login.php" class="btn btn-success">Login</a>
-      <button type="submit" class="btn btn-primary" name="register">Register</button>
-    </div>
-  </div>
-</form>
-  </div>
-</main>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registrasi Data</title>
+	<link rel="stylesheet" type="text/css" href="tambah.css">
+</head>
+<body>
+	<div class="tabel">
+	<h1>Registrasi Data</h1>
+	<form action="register.php" method="POST">
+		<table>
+			<tr>
+				<td>Nama</td>
+				<td> : </td>
+				<td><input type="text" name="nama"></td>
+			</tr>
+			<tr>
+			  <td>Email</td>
+				<td> : </td>
+				<td><input type="email" name="email"></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td> : </td>
+				<td><input type="password" name="pass"></td>
+			</tr>
+		</table>
+		<br><br>
+		<button name="submit" type="submit">Daftar</button><br><br>
+		<a href="index.php">Cancel</a>
+	</form>
+	</div>
 </body>
 </html>
+<?php  
+	require_once("koneksi.php");
+
+	if (isset($_POST['submit'])) {
+	  $nama = $_POST['nama'];
+		$email = $_POST['email'];
+		$pass = $_POST['pass'];
+  if (empty($email) || empty($pass)) {
+    return 'Username or password is empty!';
+  }
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    return "Invalid email format!";
+  }
+  if (strlen($pass) < 6) {
+    return "Your Password Must Contain At Least 6 Characters!";
+  }
+  if (!preg_match("#[0-9]+#", $pass) && !preg_match("#[A-Z]+#", $pass)) {
+    return "Your Password Must Contain At Least 1 Number or capital letter! ";
+  }
+  
+	$sql_insert = "INSERT INTO tb_user VALUES ('$nama', '$email', '$pass')";
+	mysqli_query($koneksi, $sql_insert);
+
+	header("Location: index.php");
+	}
+?>

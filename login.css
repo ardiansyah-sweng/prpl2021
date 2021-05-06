@@ -1,0 +1,76 @@
+body{
+	font-family: Tahoma, Geneva, sans-serif;
+	color: #fff;
+	background: url(login1.jpg);
+	background-size: cover;
+}
+.signin
+{
+	background: rgba(0,0,0,0.7);
+	padding: 40px;
+	width: 240px;
+	margin: auto;
+	margin-top: 80px;
+	height: auto;
+	margin-left: 180x;
+}
+form
+{
+	width: 240px;
+	text-align: center;
+}
+input
+{
+	width: 240px;
+	text-align: center;
+	font-family: 'Play', sans-serif;
+	font-size: 16px;
+	font-weight: 200px;
+	padding: 10px 0;
+	transition: border 0.5s;
+	color: black;
+}
+input[type=submit]
+{
+	border: none;
+	width: 80px;
+	background: white;
+	color: #000;
+	font-size: 16px;
+	line-height: 25px;
+	padding: 10px 0;
+	border-radius: 15px;
+	cursor: pointer;
+}
+input[type=submit]:hover
+{
+	color: #fff;
+	background-color: black;
+}
+h2{
+	text-align: center;
+	color: white;
+}
+a{
+	text-align: center;
+	color: yellow;
+	text-decoration: blink;
+}
+a:hover
+{
+	color: skyblue;
+}
+.container
+{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+input::placeholder{
+	color: #eee;
+	opacity: 1;
+}
+p
+{
+	text-align: left;
+}

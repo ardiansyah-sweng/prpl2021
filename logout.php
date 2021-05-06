@@ -1,8 +1,9 @@
 <?php 
-session_start();
-session_unset();
-session_destroy();
-setcookie('email', '', 0, '/');
-setcookie('nama', '', 0, '/');
-header('location:login.php');
+    session_start();
+     
+    // menghapus semua session
+    session_destroy();
+ 
+    // mengalihkan halaman dan mengirim pesan logout
+    header("location:index.php?pesan=logout");
 ?>
