@@ -1,36 +1,77 @@
 <?php
+include_once 'user.php';  
+$user = new User(); 
 
-/**
- * SignUp
- * 
- */
-class SignUp
-{
-    /**
-     * Send an email to new user
-     */
-    function sendEmail()
-    {
-        //Your code is here
+if (isset($_REQUEST['submit'])){
+    extract($_REQUEST);
+    $signup = $user->validation($username, $password, $email);
+    if ($signup) {
+        // Registration Success
+        echo 'Registration successful <a href="signin.php">Click here</a> to sign in';
+    } else {
+        // Registration Failed
+        echo 'Registration failed. Email or Username already exits please try again';
     }
+ }
+?>
 
-    function inputValidation($email, $password)
-    {
-        if (empty($email) || empty($password)) {
-            return 'Username or password is empty!';
-        }
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            return "Invalid email format!";
-        }
-        if (strlen($password) < 6) {
-            return "Your Password Must Contain At Least 6 Characters!";
-        }
-        if (!preg_match("#[0-9]+#", $password) && !preg_match("#[A-Z]+#", $password)) {
-            return "Your Password Must Contain At Least 1 Number or capital letter! ";
-        }
-        
-        session_start();
-        $_SESSION['username'] = $email;
-        header("location: dashboard.php");
-    }
-}
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<style><!--
+ #container{width:400px; margin: 0 auto;}
+--></style>
+ 
+<script type="text/javascript" language="javascript">
+ function submitreg() {
+ var form = document.reg;
+ if(form.name.value == ""){
+ alert( "Enter name." );
+ return false;
+ }
+ else if(form.username.value == ""){
+ alert( "Enter username." );
+ return false;
+ }
+ else if(form.password.value == ""){
+ alert( "Enter password." );
+ return false;
+ }
+ else if(form.email.value == ""){
+ alert( "Enter email." );
+ return false;
+ }
+ }
+</script>
+<div id="container">
+<center><h1>SIGN UP</h1>
+<form action="" method="post" name="reg">
+<table>
+<tbody>
+<tr>
+<th>Username:</th>
+<td><input type="text" name="username" required="" /></td>
+</tr>
+<tr>
+<th>Email:</th>
+<td><input type="text" name="email" required="" /></td>
+</tr>
+<tr>
+<th>Password:</th>
+<td><input type="password" name="password" required="" /></td>
+</tr>
+<tr>
+<td></td>
+<td><input onclick="return(submitreg());" type="submit" name="submit" value="Sign Up" /></td>
+</tr>
+<tr>
+<td></td>
+<td>Already registered?<a href="signin.php"> Click Here!</a></td>
+</tr>
+</tbody>
+</table>
+</form></center></div>
+</body>
+</html>
+
