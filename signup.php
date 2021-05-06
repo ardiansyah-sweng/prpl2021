@@ -29,7 +29,7 @@ class SignUp
     $mail->Host       = 'smtp.gmail.com';                       //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     $mail->Username   = 'kyubean7@gmail.com';                   //SMTP username
-    $mail->Password   = '1900018205PercobaanSMTP';              //SMTP password
+    $mail->Password   = '..';              //SMTP password
     $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
     //Recipients
