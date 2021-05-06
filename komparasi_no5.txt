@@ -1,0 +1,38 @@
+sing up
+<?php
+ 
+/**
+ * SignUp
+ * 
+ */
+class SignUp // class sign up
+{
+    /**
+     * Send an email to new user
+     */
+    function sendEmail() // untuk menampilkan email user yang telah di inputkan sebelumnya
+    {
+        //Your code is here
+    }
+ 
+    function inputValidation($email, $password) // fungsi untuk menampung email dan password yang telah di inputkan tadi
+    {
+        if (empty($email) || empty($password)) {// untuk mengecek email dan password telah di input atau belom
+            return 'Username or password is empty!'; // muncul jika kode di atas terjadi tidak terisi
+        }
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {// untuk mengecek format email 
+            return "Invalid email format!";// muncul jika format email tidak benar
+        }
+        if (strlen($password) < 6) {//untuk mengecek jika password tidak <6
+            return "Your Password Must Contain At Least 6 Characters!"; // muncul jika kode di atas tidak sesuai
+        }
+        if (!preg_match("#[0-9]+#", $password) && !preg_match("#[A-Z]+#", $password)) {// untuk mengecek jika password mengharuskan terdapat huruf capital dan angka
+            return "Your Password Must Contain At Least 1 Number or capital letter! "; // muncul jika inputan kode di atas tidak sesuai
+        }
+   // memulai eksekusi session dan menapilkan kepada output pada halaman dashbord     
+        session_start(); 
+        $_SESSION['username'] = $email; // 
+        header("location: dashboard.php");
+    }
+}
+ //tidak terlalu terdapat perbedaan antara kode yang sudah ada dengan yang saya buat hanya saja kode yang sudah ada itu hanya ada kode untuk eksekusi proses di dalamnya tidak dengan tampilan untuk outputnya
