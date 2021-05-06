@@ -1,0 +1,5 @@
+$ git clone gh repo clone Abyan-haidar/prpl2021
+$ git remote set-url origin https://github.com/Abyan-haidar/prpl2021
+$ git push -u origin Abyan_D_1900018218
+$ git add *
+$ git commit -m "prpl"
