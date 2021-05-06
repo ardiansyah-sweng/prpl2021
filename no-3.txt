@@ -1,0 +1,5 @@
+git clone gh repo clone ardiansyah-sweng/prpl2021
+git remote set-url origin https://github.com/dickysyahrio/prpl2021
+git push -u origin dickysyahrio_D_1900018186
+git add *
+git commit -m "UTS-PRPL"
