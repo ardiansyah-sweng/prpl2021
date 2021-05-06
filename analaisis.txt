@@ -1,0 +1,10 @@
+analaisis
+
+dari progam sign up yang saya buat, menurut saya progam yang saya buat cukup sederhana karena disini menggunakan percabangan untuk membuat syarat-syarat password dan menggunakan query yang tersambung ke database untuk mengecek apakah email sudah dipakai atau belum
+
+sedangkan pada progam sign in, juga cukup sederhana. progam bekerja dengan cara mengecek data yang ada di database, jika tercantum pada data base maka akan ke derect ke dashboard
+
+dari progam keduanya cukup mudah dipahami.
+
+perbandingan
+kalau dari progam php syarat untuk sign up tidak beda jauh antara progam saya dengan yang dicontohkan, akan tetapi diprogam saya ada fungsi untuk mengecek email yang ada di data base
