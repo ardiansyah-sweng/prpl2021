@@ -1,0 +1,14 @@
+Pada file signup.php, source code yang saya buat tidak terlalu rumit, menggunakan konsep oop, 
+dimana konstruktor berguna untuk memanggil class dari file config.php yaitu untuk membuat koneksi 
+ke database mysql. Lalu terdapat method sendEmail menggunakan PHP mail() function. Kemudian pada 
+method inputValidation, saya menambahkan logic ketika kolom email dan password terisi, maka akan dicek 
+apakah email telah terdaftar dan jika belum, maka data yang diisi oleh user tadi akan menjadi akun baru.
+
+Jika dikomparisasikan pada program signup.php pada contoh kuliah, source code yang tersedia masih banyak
+yang belum lengkap, seperti method fungsi email yang masih kosong, dan pada method inputValidation tidak 
+terdapat logic apabila kedua kolom input telah terisi dan logic untuk menambahkan akun user.
+
+Pada file signin.php, source code tidak jauh beda dari signup.php, hanya dibagian method inputValidation, 
+saya mengubah logic untuk menambah akun menjadi logic untuk mengecek apakah akun telah terdaftar atau belum. 
+Lalu ada method session() dimana method ini untuk membuat sesi agar setelah user berhasil login, maka halaman 
+signin hanya dapat diakses melalui tombol logout, ataupun ketika user merestart browser, sesi tadi akan berakhir.
