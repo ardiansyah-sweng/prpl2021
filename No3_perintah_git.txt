@@ -1,0 +1,10 @@
+3. Terapkan perintah perintah utama Git pada source code program anda
+
+- git config --global user.name"istianahretna".
+- git config --global user.gmail "istianahretnaningtyas@gmail.com".
+- git push -u origin istianahretna_e_1900018276
+- git log
+- git status
+- git clone gh repo clone ardiansyah-sweng/prpl2021
+
+

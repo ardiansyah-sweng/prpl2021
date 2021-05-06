@@ -1,0 +1,54 @@
+No 5. Analisis Sorce code Sign-up dan Sign-in yang telah  dikembangkan  dari aspek  kesederhanaan dan mudah dipahami.
+Lalu komparasikan program yang telah dikembangkan tersebut  dengan program yang telah dicontohkan  di kuliah.
+
+“Analisis soutce code program signup dan signin”
+Program signup dan signin yang saya kembangkan menggabungkan beberapa bahasa seperti html, css dan php. 
+Khususnya pada bahasa php digunakan untuk membuat program dapat di hubungkan dengan database. 
+Dari hasil pembuatan program signup dan signin, saya menggabungkan antara html dengan css dalam satu file yang sama
+dengan nama No4_signup.php (untuk program signup) dan No4_signin.php (untuk program signin). 
+Kemudian untuk bahasa php , saya pisahkan filenya dari file signup.php dan file signin.php,
+ yang dimana saya buat file baru dan saya beri nama file tersebut untuk database php nya dengan nama No4_conn_signup.php
+ (untuk program database signup) dan No4_conn_signin.php (untuk program database signin). 
+ Alasannya karena agar mempermudah dalam mengelompokan pembuatan program signup dan signin tersebut. 
+ Dari adanya pengelompokan antara program yang berisi bahasa html dan css dalam satu file yang sama, 
+dengan bahasa php dalam file tersendiri, dimana tujuannya agar program yang saya buat dapat mempermudah untuk dipahami 
+dan membuat tampak sederhana, karena saya mengelompokan program yang saya buat berdasarkan 
+fungsinya masing masing, seperti fungsi khusus untuk tampilan atau fungsi khusus untuk database.
+Misalnya pada  file No4_signup.php dan No4_signin.php khusus untuk mengelola tampilan halaman web pada program, 
+dan pada file No4_conn_signup.php dan file No4_conn_signin.php hanya berisi bahasa php saja dan khusus untuk 
+mengelola database agar data-data yang di inputkan dapat tersimpan di dalam database server.
+====================================================================================================================
+
+‘’Sedangkan untuk source codenya sendiri’’
+
+Pada program file No4_signup.php dan file No4_signin.php untuk bagian htmlnya saya membuat beberapa fungsi inputan seperti 
+nama, email dan password (untuk program signup) dan saya membuat fungsi inputan email dan password saja (untuk program singin)
+kemudian dari setiap fungsi inputan tersebut saya kelompokan dengan menggunakan fungsi <div> dengan
+memberi class agar dapat mudah untuk dikelompokan dan dikelola untuk di seting pada bagian css, serta memudahkan dalam 
+menandai fungsi tersebut, bahwa fungsi tersebut berguna untuk membuat sebuah inputan. Lalu pada bagian css, 
+saya hanya menggunakan beberapa fungsi umum dari css untuk memberikan kreasi tampilan pada halaman web agar lebih rapi, 
+cantik dan enak dipandang. Sedangkan sourcode pada php nya saya menggunakan beberapa fungsi umum untuk menghubungkan ke database 
+contohnya  if(isset()) ,fungsi if else , fungsi SELECT * FROM…WHERE… dan INSERT INTO…() VALUES() dan lainnya.
+====================================================================================================================
+
+“Komparasikan program yang telah dibuat dengan program yang telah dicontohkan”
+
+Perbandingannya: 
+    Saya memprogram signup dan singin dengan menggunakan bahasa html, css dan php dengan fungsi fungsi code umum.
+Namun program sign-up dan sing-in yang saya buat memang terlihat agak banyak. 
+Alasan program saya lebih panjang, karena dalam program php saya harus melakukan validasi parameter dengan 
+penginisialisasian menggunakan variable. Seperti contohnya  “$email = validate($_POST['email']);”, 
+serta penggunaan fungsi sql agar dapat terhubung ke database, dan beberapa fungsi php lainnya di dalam program yang saya kembangkan.
+
+    Dan ketika program yang saya kembangkan dibandingkan dengan program yang sudah dicontohkan sebelumnya,
+maka akan tampak terlihat perbedaanya. Bahwa program yang dicontahkan lebih terlihat simple dan terlihat lebih
+terstruktur. Karena program yang telah dicontohkan menerapkan OOP dalam struktur programnya, Maka dari itu
+program yang telah dicontohkan tersebut menjadi terlihat lebih ringkas lebih simple dan lebih terstruktur 
+daripada program yang saya kembangkan.
+
+    Kemudian dari segi program yang mudah dipahami, bahwa menurut saya program yang telah dicontohkan sebelumnya
+lebih mudah untuk dipahami, karena programnya yang terstruktur dengan OOP serta dengan beberapa fungsi class 
+yang dapat mengelompokkan program sehingga rapi, kemudian karena program signup.php yang telah dicontohkan tersebut
+lebih ringkas, maka dapat lebih mudah untuk dipahami dan dimengerti. 
+Namun terlepas dari hal itu semua, bahwa program yang saya kembangkan sediri masih tetap bisa saya ngerti 
+dan Alhamdulillah masih bias dijalankan di browser.
