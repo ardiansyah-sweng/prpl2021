@@ -1,9 +1,9 @@
 <?php
 session_start();
-if (!isset($_SESSION['username'])) {
-    header("Location: signup.php");
+if (!isset($_SESSION['email'])) {
+    header("Location: zzz.php");
 }
-echo 'Welcome, '. $_SESSION['username'];
+echo 'Welcome, '. $_SESSION['email'];
 ?>
 
 <!DOCTYPE html>

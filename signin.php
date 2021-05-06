@@ -20,7 +20,7 @@
                 <input type="text"><br>
                 <label>Password</label><br>
                 <input type="password"><br> <br>
-                <a href="dashboar.php"><button>Log in</button></a>
+                <a href="dashboard.php"><button>Log in</button></a>
             </form>
         <br>
     </div>
