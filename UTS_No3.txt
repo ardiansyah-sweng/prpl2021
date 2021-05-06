@@ -1,0 +1,6 @@
+- Melihat list email dan username atau nama branch kita
+git config --list
+- Melihat riwayat perubahan
+git log
+- Melihat status working tree
+git status
