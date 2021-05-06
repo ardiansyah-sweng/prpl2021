@@ -1,0 +1,9 @@
+Analisis Program
+-Terkait dengan kesederhanaan, menurut saya Pada program saya 
+masih belum terlalu sederhana karena terkait dengan beberapa file yaitu diantaranya,untuk file penghubung antara databese dengan file php, serta file Sign-Up dan Sign in yang terpisah, 
+dan juga terdapat file css guna mempercantik/memperbagus tampilan. 
+Berbeda dengan program yang di contohkan pada elearning yang sudah dalam satu file sudah dikelompokkan dalam beberapa class.
+
+-Terkait dengan mudah dipahami, Program yang sudah di contohkan di elearning lebih mudah dipahami karena lebih ringkas namun di dalamnya sudah terdapat beberapa kode untuk pengecekan email dan password yang dimasukkan user.
+-Pada program saya yang masih menggunakan database sql, serta koneksi php belum bisa menghubungkan antara email yang diinputkan user. Pada program yang di contohkan pada elearning buat sudah bisa terhubung ke email yang bisa menambah keamanan dari proses signup serta login yang dibuat. 
+Jika pada program yang di contohkan dalam elearning dalam satu program sudah terdapat beberapa class, namun berbeda dengan program saya yang masih berupa beberapa file. 
