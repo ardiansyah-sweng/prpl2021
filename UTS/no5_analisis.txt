@@ -1,0 +1,126 @@
+Pada Sourcecode Github : (signup.php)
+	Function sendEmail() digunakan untuk mengirimkan sebuah email kepada user yang telah menginputkan email di halaman register.
+	if (mail($to, $subject, $message)) {  (//digunakan untuk mengecek sebuah kondisi yang bertujuan memastikan email terikirim atau tidak.)
+            echo 'Your mail has been sent successfully.'; (// menampilkan pesan bahwa email telah di kirim)
+        } else { 
+            echo 'Unable to send email. Please try again.'; (// menampilkan pesan bila email belum terkirim)
+	function inputValidation($email, $password) (// fungsi ini digunakan untuk menampung sebuah inputan dari email dan password yang dimasukkan oleh user)
+    {
+        if (empty($email) || empty($password)) { (//digunakan untuk mengecek kondisi apakah email dan password sudah di inputkan atau belum, jika belum diinputkan akan tampil “Username or password is empty!”)
+            return 'Username or password is empty!';
+        }
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { (//digunakan untuk memastikan format email yang di inputkan sudah sesuai atau belum, bila belum akan tampil “Invalid email format!”)
+            return "Invalid email format!";
+        }
+        if (strlen($password) < 6) {(//digunakan untuk menberikan instruksi bahwa password harus berisi 6 karakter)
+            return "Your Password Must Contain At Least 6 Characters!";
+        }
+        if (!preg_match("#[0-9]+#", $password) && !preg_match("#[A-Z]+#", $password)) {{(//digunakan untuk menberikan instruksi bahwa password harus berisi 1 angka atau huruf kapital)
+            return "Your Password Must Contain At Least 1 Number or capital letter! ";
+        }
+•	session_start(); (//digunakan untuk memulai eksekusi session pada server dan menyimpannya pada browser untuk ditampilkan pada halaman dashboard,php)
+        $_SESSION['username'] = $email;
+        header("location: dashboard.php");
+
+(dashboard.php)
+•	session_start(); (//digunakan untuk memulai eksekusi session pada server dan menyimpannya pada browser serta mengambil inputan dari ‘username’ yang ada pada signup.php lalu ditampilkan pada halaman dashboard,php)
+if (!isset($_SESSION['username'])) {
+    header("Location: signup.php");
+}
+echo 'Welcome, '. $_SESSION['username'];
+
+
+Pada Sourcecode sendiri (signup.php)
+
+	session_start(); (//digunakan untuk memulai eksekusi session pada server)
+require_once("config.php"); (//digunakan untuk menghubungkan ke database)
+if(isset($_POST['submit'])){ (//digunakan untuk menghubungkan ke database)
+    $username = $_POST['username']; (//deklarasi username dari database)
+    $password = $_POST['password']; (//deklarasi password dari database)
+    if (empty($username) || empty($password)) { (//digunakan untuk mengecek kondisi bahwa email dan password sudah di inputkan apa belum, bila belum akan tampil “Username or password is empty!”)
+        echo 'Username or password is empty!';
+    }
+    if (!filter_var($username, FILTER_VALIDATE_EMAIL)) {
+        echo "Invalid email format!";
+    }(//digunakan untuk memastikan format email yang di inputkan sudah sesuai atau belum, bila belum akan tampil “Invalid email format!”)
+    if (strlen($password) < 6) {
+        echo "Your Password Must Contain At Least 6 Characters!";
+    }(//digunakan untuk menberikan instruksi bahwa password harus berisi 6 karakter)
+    if (!preg_match("#[0-9]+#", $password) && !preg_match("#[A-Z]+#", $password)) {{{(//digunakan untuk menberikan instruksi bahwa password harus berisi 1 angka atau huruf kapital)
+        echo "Your Password Must Contain At Least 1 Number or capital letter! ";
+    }
+    else {
+    $sql_insert = "INSERT INTO data VALUES('$username','$password'); {{(//digunakan untuk mencetak inputan dari username dan password ke database)
+        mysqli_query($koneksi,$sql_insert); (//digunakan untuk mengirim perintah SQL ke database MySQL untuk melakukan proses CRUD)
+        $_SESSION['username'] = $username;
+        header("location:dashboard.php"); 
+    }
+	<!DOCTYPE html> (//penggunaan Bahasa pemgorgraman html untuk membangun rangka sebuah web)
+<html lang="en">
+<head>(//pembuka syntax head untuk konfigurasi pembuatan web)
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/sign.css"> (//digunakan untuk menghubungkan ke file CSS)
+    <title>Sign Up</title> (//Judul dari halaman web kita)
+</head>
+<body>(//pembuka syntax body atau bagian inti dari program)
+    <div class="utama"> (//mengelompokkan beberapa syntax agar mudah untuk dikenali dan di beri hiasan )
+    <h1>Sign Up</h1>
+    <form action="sign.php" method="post" encypte="multipart/form-data">(//digunakan untuk melakukan sebuah method post pada form sign.php)
+                <label>Username</label><br>(//menampilkan tulisan username)
+                <input type="text" name="username">(//mendeskripsikan secara khusus tipe inputan adalah text dengan nama username) <br>(//untuk memberi jarak 1 enter)
+                <label>Password</label><br>>(//menampilkan tulisan password)
+                <input type="password" name ="password">(//mendeskripsikan secara khusus tipe inputan adalah password dengan nama password) <br> <br>
+                <button type="submit" name="submit">Register</button>(//mendeskripsikan secara khusus tipe inputan adalah submit dengan nama submit sekaligus membuat tombol Register)
+            </form>
+        <br>
+        <p>Already have an account? <a href="login.php">Login here</a>.</p> (//membuat paragraph dan mengisi nya dengan syntax a yaitu untuk mengubungkan kalimat login here ke halamn login.php)
+    </div> (//penutup syntax div atau pengelompokkan)
+</body> (//penutup syntax body)
+</html> (//penutup syntax html)
+(login.php)
+	<?php (// penggunaan Bahasa pemrograman php untuk membangun rangka sebuah web bersama dengan html)
+    session_start();
+    include 'config.php'; (//digunakan untuk menghubungkan ke database)
+?>
+
+	<!DOCTYPE html> (//penggunaan bahasa html untuk membangun rangka sebuah web)
+<html lang="en">
+<head> (//pembuka syntax head untuk konfigurasi pembuatan web)
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <link rel="stylesheet" href="css/login.css">(//digunakan untuk menghubungkan ke file CSS)
+    <title>LOGIN</title>(//Judul dari halaman web kita)
+</head>
+<body>
+    <div class="utama">(//mengelompokkan beberapa syntax agar mudah untuk dikenali dan di beri hiasan)
+    <h1>login</h1> (//menampilkan tulisan login dengan ukuran yang telah ditentukan secara default oleh system melalui syntax h1)
+       <form action="" method="post">
+                <label>Username</label>>(//menampilkan tulisan username)<br>
+                <input type="text"><br>
+                <label>Password</label>>(//menampilkan tulisan username)<br>
+                <input type="password"><br> <br>
+                <a href="dashboard.php"><button>Log in</button></a>(//mengubungkan tombol login ke halaman dashboard.php)
+            </form>
+        <br>(//untuk memberi jarak 1 enter)
+    </div>
+</body>
+</html>
+
+
+Perbandingan Sourcecode github dan sendiri :
+Github :
+ 
+
+Sendiri :
+ 
+	Dari kedua code diatas, bisa dilihat perbedaannya, pebedaan yang sangat terlihat dari kedua program ini adalah kodingan github menggunakan gaya penulisan Object Oriented Programming dan kodingan pribadi menggunakan gaya penulisan Procedural.
+	Codingan procedural instruksi dilakukan langkah demi langkah, sedangkan untuk OOP lebih menyusun semua kode program dan struktur data sebagai objek.
+	Codingan procedural membutuhkan lebih sedikit memori ketimbang OOP.
+	Codingan OOP representasi kodingan seperti pada dunia nyata.
+
+Kesimpulan :
+
+Untuk kodingan yang ringkas identik / lebih kepada model codingan OOP karena pendeskripsian dan pengelompokannya sesuai dengan objek dan classnya masing-masing jadi lebih mudah untuk dikerjakan, apalagi jika digunakan untuk pengerjaan program dengan skala besar serta melibatkan orang banyak. Tetapi untuk yang lebih mudah dipahami oleh diri saya pribadi adalah model codingan procedural karena dari awal belajar pemgrograman web, sudah dikenalkan dengan model codingan tersebut dan jika memang untuk membangun project itu secara pribadi yang skala kecil dan membutuhkan waktu cepat, model codingan procedural yang lebih mudah untuk di implementasikan.
