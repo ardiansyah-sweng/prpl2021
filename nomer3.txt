@@ -1,0 +1,5 @@
+$ git clone gh repo clone ardiansyah-sweng/prpl2021
+$ git remote set-url origin https://github.com/irfanmaulanaa24/prpl2021     
+$ git push -u origin irfanmaulana_D_1900018206
+$ git add *
+$ git commit -m "prpl"

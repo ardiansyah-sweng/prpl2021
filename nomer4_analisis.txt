@@ -1,0 +1,44 @@
+Analisa program 
+Pada program signup terdapat deklarasi sebuah variabel guna nantinya untuk
+mengeksekusi sebuah program, pada prpgram sign up yang saya buat tidak ada sebuah class 
+sigupnya dimana saya menggantinya dengan function validation yang berisikan username dan password, 
+kemudan dibawahnya lagi terdapat sebuah percabangan if yang didalamnya terdapat ketentuan ketetuan
+yang harus diinputkan dengan benar mengenai kriteria username, kondisi percabangan yang pertama jika 
+email dan password kosong maka program tidak akan mengeksekusi dan memberitahukan bahwa username atau
+passwordnya kosong, lalu program akan kembali untuk merintahkan mengisikan usernamenya. Dimulai dari
+pengecekan input apakah email dan password sudah benar iinputkan atau belum, kemudian memfilter untuk email 
+valid atau tidaknya, lalu kondisi percabangan if selanjutnya dimana mengkondisikan jika pasword yang 
+diinputakan kurang dari 6 karakter maka sistem program secara otomatis salah, kemudian kondisi 
+percabangan if berikutnya juga jika passowrd kedua pun tidak sesuai kriteria dimana harus mengandung 
+satu huruf kapital dan juga angka jika tidak sesuai maka sistem akan membaca nya sebgai kesalahan dalam input, 
+setelah itu masuk pada kondisi percabangan selanjutnya yaitu dimana masuk dalam penyimpanan nilai dari atribut 
+email itu sendiri sebgai username yanga akan ditampilakn pada bagain Dashboard. Setelah fuction
+validation php nya dibawah terdapat sebuah html dimana unutk mengatur jendela program nantinya 
+supaya lebih tertata lagi. Kemudian pada bagain dashboard nya itu memanggil username yang telah 
+diinputkan sebelumnya kemudian akan ditampilkan sebagai outputnya dan html akan mengeksekusi memnggil 
+function username tersbut tadi.  Secara kesulurahan mungkin tidak jauh berbeda dengan program sigunup 
+yang diberikan pada pertemuan 3 hanya tidak ada penggunaan sebuah class nya unutk eksekusi sistemnya dengan 
+kriteria kriteria yang ditentukan pun sama 
+
+Kemudian pada program signin saya sama halnya dengan program signup yang sudah dibuat bahkan hampir 
+sama dengan program signupnya dari pendeklarasiannya variabel, kemudai program sign in tidak menggunakan 
+sebuah class, kemudian terdpat juga sebuah percabangan if yang didalamnya terdapat ketentuan ketetuan yang
+harus diinputkan dengan benar mengenai kriteria username, kondisi percabangan yang pertama jika email dan 
+password kosong maka program tidak akan mengeksekusi, Dimulai dari pengecekan input apakah email dan password 
+sudah benar iinputkan atau belum, kemudian memfilter untuk email valid atau tidaknya, lalu kondisi percabangan 
+if selanjutnya dimana mengkondisikan jika pasword yang diinputakan kurang dari 6 karakter maka sistem program 
+ecara otomatis salah, kemudian percabangan if berikutnya juga jika passowrd kedua pun tidak sesuai kriteria 
+dimana harus mengandung satu huruf kapital dan juga angka jika tidak sesuai maka sistem akan membaca nya 
+sebgai kesalahan dalam input, setelah itu masuk pada kondisi percabangan selanjutnya yaitu dimana masuk 
+dalam penyimpanan nilai dari atribut email itu sendiri sebgai username yanga akan ditampilakn pada bagain 
+Dashboard. pada bagain dashboardnya itu memanggil username yang telah diinputkan sebelumnya kemudian akan 
+ditampilkan sebagai outputnya dan html akan mengeksekusi memnggil function username tersbut tadi
+
+dari aspek kesederhaan Codingan procedural instruksi dilakukan langkah demi langkah, 
+sedangkan untuk OOP lebih menyusun semua kode program dan struktur data sebagai objek 
+Codingan procedural membutuhkan lebih sedikit memori ketimbang OOP dan juga mudah dipahami bagi saya.
+
+Untuk kodingan yang ringkas lebih kepada model codingan OOP karena pendeskripsian dan pengelompokannya sesuai 
+dengan objek, namun untuk yang lebih mudah dipahami oleh diri saya yaitu model codingan procedural 
+karena dari awal belajar mta kuliah pemgrograman web dan juga karena model codingan procedural 
+yang lebih mudah untuk di implementasikan
