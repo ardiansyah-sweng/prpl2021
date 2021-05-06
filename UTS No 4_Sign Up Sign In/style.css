@@ -1,0 +1,82 @@
+* {
+      font-family: "Tw Cen MT";
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 105 vh;
+      background: url(semangat.jpg);
+      background-repeat: no-repeat;
+      position: relative;
+    }
+    .container {
+      width: 300px;
+      margin: 20px;
+      padding: 20px;
+      height: 470px;
+      background-color: rgba(0, 0, 0, 0.2);
+      box-shadow: 1px 1px 10px;
+    }
+    .container .form form h2 {
+      color: black;
+      font-size: 50px;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+    .container .form form .input{
+      color: black;
+      font-size: 19px;
+      margin-bottom: 40px;
+    }
+    .container .form form .ex{
+      color: black;
+      text-align: center;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .container .form form .input input {
+      background: transparent;
+      color: white;
+      outline: none;
+      border: none;
+      width: 100%;
+      padding-bottom: 2px;
+      font-size: 16px;
+      padding-left: 1px;
+      padding-top: 7px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid white;
+    }
+    .container .form form .input3 input {
+      padding: 8px, 20px;
+      background-color: rgba(29, 45, 120, 0.5);
+      color: white;
+      font-size: 14px;
+      border: none;
+      text-transform: uppercase;
+      width: 49%;
+      height: 45px;
+      transition: 0.5s;
+      z-index: 1;
+    }
+    .container .form form .input3 input:hover{
+      transform: scale(1.1);
+      background: #fffd7d;
+      color: #5762ff;
+      z-index: 2;
+    }
+    .container .form form .input2 {
+      color: white;
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+    .container .form form .ex a {
+      text-decoration: none;
+      color: yellow;
+    }
