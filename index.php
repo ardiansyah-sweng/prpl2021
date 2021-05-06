@@ -1,13 +1,30 @@
 <?php
 
-require_once("config.php");
+class Login{
+    public $username="";
+    public $password="";
+    
+    public function masuk()
+    {
+        $koneksi = mysqli_connect('localhost', 'root', '', 'signup') or die($koneksi);
+        if (empty($this->username) || empty($this->password)) {
+            echo "email or password is empty!";
+        }
+        session_start();
+        $_SESSION['username'] = $this->username;
+        
+        if(!empty($this->username)and !empty($this->password)){$sql_query = "SELECT * FROM admin VALUES('$this->username','$this->password')";
+            mysqli_query($koneksi,$sql_query);
+                header("location:menu.html"); 
+        }
+    }
+}
 
-if(isset($_POST['submit'])){
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    $sql_insert = "INSERT INTO data VALUES('$username', '$password')";
-    mysqli_connect($config, $sql_insert);
+$in = new Login();
+if(isset($_POST['login'])){
+    $in -> username = $_POST['email'];
+    $in -> password = $_POST['password'];
+    $in -> masuk();
 }
 
 ?>
@@ -29,9 +46,14 @@ if(isset($_POST['submit'])){
     <h5>Masukkan Username dan Password Anda!</h5>
 </header>
 
+    <?php if(isset($error)) : ?>
+        <p st> email/password salah</p>
+        <?php endif; ?>
+
+
     <form class="menu" action="" method="post">
         <form action="" method="POST">
-                <td>Username :</td>
+                <td>Email:</td>
                 <br>
                     <input type="text" name="email"/>
                 <br>
@@ -40,9 +62,10 @@ if(isset($_POST['submit'])){
                 <br>
                     <input type="password" name="password"/>
                 </br>
+                <td></td>
             <br>
             <center>
-                <button><a href="dashboard.php">Masuk</a></button>
+                <button name="login" type="submit" class="button">Login</button>
                 <button><a href="signup.php">Sign Up</a></button>
             </center> 
         </form>

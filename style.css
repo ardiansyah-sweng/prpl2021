@@ -5,7 +5,7 @@
 }
 
 body{
-    background-image: linear-gradient(120deg, #ffe3de, #ffffff);
+    background-image: linear-gradient(120deg, #ffffff, #ffffff);
     color: #0a043c;
     font-family: "Poppins", sans-serif;
     min-height: 100vh;
@@ -14,6 +14,7 @@ body{
 a{
     text-decoration: none;
     padding: 0.2rem;
+    color:#fff;
 }
 
 header{
@@ -34,7 +35,7 @@ form button{
     font-size: 1.2rem;
     border: none;
     text-align: center;
-    color: #0a043c;
+    color: #fff;
     background:  #a3ddcb;
     cursor: pointer;
     transition: all 0.3s ease;
