@@ -1,0 +1,24 @@
+Menerapkan perintah-perintah utama Git pada source code :
+1)	Pada VS Code, klik menu View > Terminal (Ctrl +)
+2)	Pada command prompt, Windows PowerShell, Copyright (c) Microsoft Corpotation. All rights reserved. Try the new cross-platform PowerShell https://aka.ms/pscore6 PS C :\xampp\htdocs\prpl2021>
+3)	Ketik perintah :
+git config –global user.name “nama”. Contoh:
+git config –global user.name “qoyummilati”, lalu enter
+4)	Salin tautan https://github.com/ardiansyah-sweng/prpl2021.git
+5)	Pada Clone Repository, pada bagian Provide repository URL or pick a repository source, paste tautan https://github.com/ardiansyah-sweng/prpl2021.git
+6)	Pilih folder htdocs
+7)	Membuat branch, contoh qoyummilatitrirejeki_E_1900018248
+8)	Membuat source kode kemudian save di folder prpl
+9)	Mengupdate source code, git pull origin development
+10)	Mengirim source code ke branch remote, klik menu source control, untuk melakukan stage changer klik tanda+, Untuk melakukan Commit klik icon tanda centang, 
+11)	Lakukan push, mengklik ikon menu Synchronize Changes
+12)	Compare dan pull request
+13)	Menentukan branch tujuan untuk dimarge, lalu create pull request
+
+Format perintah :
+C:\xampp\htdocs\prpl2021,  lalu enter
+From https://github.com/qoyummilati/prpl2021
+* branch  qoyummilatitrirejeki_E_1900018248
+Marge made by the ‘recursive’ strategi.
+README.md 	|
+Sigin2.php
