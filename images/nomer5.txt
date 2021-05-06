@@ -1,0 +1,7 @@
+ANALISIS SIGN- UP
+-Pada baris 9-64, adalah functions untuk sign-upnya
+-Langkah pertama akan mengecek apakah email yang di daftarkan sudah ada atau belum, jika sudah ada maka tidak bisa mendaftar (lihat pada baris 18-23)
+-Pada baris 27-38, adalah functions untuk menambah data ke dalam database (sesuai dengan data yang di inputkan)
+-Setelah berhasil menambah data, maka function mengirim email akan di jalankan (lihat pada baris ke 41-54)
+-Jika proses mengirim email sudah berhasil, maka akan di arahkan ke halaman sign-in.php
+
