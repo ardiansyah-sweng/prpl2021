@@ -1,0 +1,11 @@
+5. Analysis
+
+for this code is using a function with OOP, this code contains several functions, among others, to validate data such as email and username
+
+there is Class function : contains functions functions to run code. Function send Email : made to fill in email data that will be stored in the database.
+input validation : to validate whether or not the input entered is correct and also the password and email must be filled in if you want to validate the data entered.
+example : password must be more than 6 characters, password must contain at least one number or capital letters.
+and Session : the session function is used to display the page that will be addressed after passing the page for registration.
+
+compare between the program was made and source code in elearning is by using html in PHP, also in the isset function, it is 
+used to enter data that was previously written using the session to move pages when it is validated. the difference is also in its function which is divided into several parts.
