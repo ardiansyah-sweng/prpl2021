@@ -1,0 +1,110 @@
+1.Source Code Sign-Up
+
+Berikut ini adalah Source Code Sign-Up
+ if (isset($_POST['submit'])) { // Jika sudah melakukan submit pendaftaran, maka program ini akan di jalankan
+
+        // Di bawah ini untuk menampung inputan form yang diisi
+        $email      = $_POST['email'];
+        $password   = $_POST['password'];
+        $status     = "Pending";
+
+        // Fungsi untuk mengecek apakah emailnya sudah pernah di daftarkan atau belum
+        $queryLogin     = $pdo->query("SELECT email FROM akun WHERE email='$email'");
+        $rowsLogin      = $queryLogin->rowCount();
+        $resultLogin    = $queryLogin->fetch(PDO::FETCH_ASSOC);
+
+        // Jika emailnya belum pernah di daftarkan, maka boleh melakukan registrasi & program di bawah ini akan di jalankan
+        if ($rowsLogin == 0){
+            try {
+
+                // fungsi untuk menambah data ke dalam databse
+                $stmt = $pdo->prepare("INSERT INTO akun
+                        (email,password,status)
+                        VALUES(:email,:password,:status)" );
+                            
+                $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+                $stmt->bindParam(":password", $password, PDO::PARAM_STR);
+                $stmt->bindParam(":status", $status, PDO::PARAM_STR);
+
+                $count = $stmt->execute();
+
+                $insertId = $pdo->lastInsertId();
+                
+            }catch(PDOException $e){
+                echo "<script>window.alert('Failed to input, please contact our team!'); window.location(history.back(-1))</script>";
+                exit();
+            }
+
+            // Program di bawah ini digunakan untuk mengirim link aktivasi ke email yang di gunanakn untuk mendaftar
+            try {
+                $to_email   = $email;
+                $subject    = "Aktivasi Email";
+                $body       = "Silahkan klik link ini untuk melakukan aktivasi: ";
+                $body       .= $linknya[0]."success.php?akun=$insertId&email=$email&status=Aktif";
+                $headers    = "From: aktivasi.email@example.com";
+             
+                if (mail($to_email, $subject, $body, $headers)) {
+                    echo "<script>window.location = 'success.php?akun=$insertId&email=$email&status=Pending'</script>"; // jika berhasil mengirim email, maka akan di arahkan ke halaman ini
+                } else {
+                    echo("Email sending failed...");
+                }
+            } catch (PDOException $e) {
+                echo "Gagal kirim email";     
+            }
+
+
+
+Dari program tersebut saya menyederhakan script yang ada dengan script sesuai dengan pemahaman saya, sehingga saya juga sudah menganalisis dan mengambil perbedaan antara Source Code Sign-Up yang saya buat dengan Source Code Sign-Up yang di contohkan pada materi perkuliahan,
+a.	ANALISIS
+-	Poin utama yang menjadi perbedaannya adalah, saya membangun code ini dengan php native & tidak memerlukan functions (seperti yang di contohkan pada perkuliahan). Karena menurut saya, program yang dibuat ini hanya di butuhkan pada file sign-up saja, sehingga akan lebih efektif jika tidak memakai functions.
+-	Proses sign-up ini saya memakai metode POST
+-	Data yang di olah akan di simpan ke dalam suatu database yang sebelumnya sudah saya buat
+-	Dan dalam menggolah data yang di inputkan, saya menggunakan PDO::MYSQLi
+-	Validasi pertama saya gunakan untuk mengecek apakah email yang di masukkan sudah terdaftar atau belum, jika belum maka bisa melakukan pendaftaran.
+-	jika validasi pertama berhasil, saya menggunakan try catch untuk memprosesnya.
+-	Yang pertama memperoses input data (proses sign-up)
+-	Setelah itu saya membutuhkan proses untuk mengirim email aktivasinya
+
+b.	KESIMPULAN
+Jika dilihat dari kesederhanaannya, mungkin code yang saya buat lebih rumit. Akan tetapi code yang di buat ini sedikit lebih kompleks, dan juga menambahkan beberapa validasi & fitur agar lebih bagus.
+
+
+
+2.	Source Code Sign-In
+
+Berikut ini adalah Source Code Sign-In
+
+  if (isset($_POST['submit'])) {
+        $email      = $_POST['email'];
+        $password   = $_POST['password'];
+
+        // Function login 
+        $queryLogin     = $pdo->query("SELECT * FROM akun WHERE email='$email' AND password='$password' AND status='Aktif'"); // Query Loginnya
+        $rowsLogin      = $queryLogin->rowCount();
+        $resultLogin    = $queryLogin->fetch(PDO::FETCH_ASSOC);
+
+        if ($rowsLogin > 0){ // Jika email & passwordnya ada, maka program di bawah ini akan di jalankan
+            session_start(); // memulai session login
+            $_SESSION['id_akun']    = $resultLogin['id_akun'];
+            $_SESSION['email']      = $resultLogin['email'];
+            $_SESSION['password']   = $resultLogin['password'];
+
+            echo "<script>alert('Hallo, $_SESSION[email]. Welcome to our website'); window.location = 'dashboard.php'</script>"; // Setelah berhasil login akan di arahkan ke link dashboard.php
+
+        }
+
+Dari program di atas, saya menyederhakan script yang ada dengan script yang sedikit saya pahami, sehingga saya sudah menganalisis dan mengambil perbedaan antara Source Code Sign-In yang saya buat dengan Source Code Sign-In yang di contohkan pada materi perkuliahan.
+
+Analisis & Kesimpulan dari Source Code Sign-In ini akan sedikit sama dengan Source Code Sign-Up
+
+a.	ANALISIS
+-	Poin utama yang menjadi perbedaannya adalah, saya membangun code ini dengan php native & tidak memerlukan functions (seperti yang di contohkan pada perkuliahan). Karena menurut saya, program yang dibuat hanya di butuhkan pada file sign-in saja, sehingga akan lebih efektif jika tidak memakai functions.
+-	Proses sign-in ini saya memakai metode POST
+-	Data yang dikirimkan berupa email & passwordnya
+-	Validasi yang saya gunakan untuk proses sign-in ini adalah email, password & status akunnya aktif.
+-	Saya menggunakan pengkondisian if else, jika data yang di masukkan benar, maka bisa login dan di arahka ke halaman dashboard
+
+b.	KESIMPULAN
+Jika dilihat dari kesederhanaannya, mungkin code yang di buat ini  sedikit lebih rumit. Akan tetapi code yang di buat ini menurut saya lebih kompleks, dan menambahkan beberapa validasi & fitur agar lebih bagus.
+
+
