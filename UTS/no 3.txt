@@ -1,0 +1,6 @@
+3. - buka git bash here
+    - ketik perintah git config --global user.name "bellasaphira" 
+    lalu enter
+    - ketik perintah git config --global user.email "bsaphira7@gail.com"
+    tekan enter
+    

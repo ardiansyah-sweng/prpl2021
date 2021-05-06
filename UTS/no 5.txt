@@ -1,0 +1,7 @@
+5. program yang saya buat sign in dan sign up menggunakan OOP (object oriented programming) yang mana saya menggunakan class. saya menggunakan OOP supaya programnya lebih terstrukur.
+untuk kesederhanaannya program yang saya buat cukup sederhana dan mudah di pahami.
+di dalam source code sign up dan sign in saya menggunakan percabangan if  dan if isset, Fungsi isset () digunakan untuk memeriksa apakah suatu variabel sudah diatur atau belum. Fungsi isset () mengembalikan false jika variabel pengujian berisi nilai NULL.
+
+untuk perbedaannya pada source code yang saya buat menggunakan berbagai macam fungsi seperti if else, if isset, dll. sedangkan code yang ada di prpl 2021 tidak menggunakan fungsi dan itu menandakan bahwa source code yang saya buat menggunakan object oriented programming.
+penulisan source code dari prpl 2021 menggunakan gaya penulisan code prosedural. code prosedural adalah pemrograman imperatif yang memecah kode menjadi subrutin. Pemrograman terstruktur adalah pendekatan yang lebih disiplin untuk pemrograman prosedural yang melarang lompatan sewenang-wenang (misalnya goto) dan perubahan keadaan global.
+sedangkan source code yang saya buat menggunakan OOP, OOP adalah suatu metode pemrograman yang berorientasi pada objek.
