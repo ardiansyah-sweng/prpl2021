@@ -1,0 +1,10 @@
+//* UTS PRPL *//
+//* Nama  : Muhammad nauval Fauzi Khatullah *//
+//* Nim   : 1900018179 *//
+//* Kelas : D *//
+//* Soal Ke 3 *//
+
+git config --global user.email nauval.fauzi07@gmail.com
+git config --global user.name "nauvalfauzi"
+git pull
+git branch
