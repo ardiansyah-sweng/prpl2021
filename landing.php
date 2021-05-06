@@ -65,7 +65,6 @@ if (!isset($_SESSION['username'])) {
         <div class="up">
             <p><?php echo '<h2>Selamat</h2>' . $_SESSION['username']; ?></p>
             <p> Email telah terdaftar</p>
-            <p>Klik tombol disamping ini dan silahkan Login kembali menggunakan akun yang sudah anda daftarkan</p>
             <button type="button" class="btn btn-outline-dark mt-5 btn-lg"><a href="index.php"> Klik Ini</a></button>
         </div>
     </div>
