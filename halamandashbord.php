@@ -13,12 +13,12 @@
         <h1>DASHBORD</h1>
     </header>
 
-    <?php
+    <center><?php
         session_start();
         if (!isset($_SESSION['username'])) {
           header("Location: signup.php");
         }
     echo 'Selamat Datang, '. $_SESSION['username'];
-    ?>
+    ?></center>
 </body>
 </html>

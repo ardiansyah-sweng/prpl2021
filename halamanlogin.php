@@ -29,8 +29,8 @@
         <center><button type="submit" name="submit">LOGIN</button></center>
         <br>
 
-        <td>Belum Punya Akun, Buat Akun Disini</td>
-        <center><button type="submit" name="submit" a href="halamansignup.php">SIGN UP</button></center>
+        <p>Belum Punya Akun, Buat Akun <a href="halamansignup.php">Disini</a></p>
+        <br></br>
     </form></center>
 </body>
 </html>
@@ -55,8 +55,8 @@
             echo "Password Anda Harus Memiliki 1 Angka Atau Huruf Kapital!";
         }
         else{
-            $sql_insert = "INSERT INTO admin VALUES('$username', '$password')";
-            mysqli_query($config, $sql_insert);
+            $sql_insert = "INSERT INTO user VALUES('$username', '$password')";
+            mysqli_query($conn, $sql_insert);
             $_SESSION['username'] = $username;
             header("Location:halamandashbord.php");
         }
