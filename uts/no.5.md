@@ -1,0 +1,20 @@
+## Jawaban UTS Nomor 5
+# Analisis program
+<p>
+    Dari code program sign up yang sudah dituliskan di dalam folder repository yang saya clone saya tambahkan file html untuk tampilan kotak dialog untuk memasukkan email dan password yang data inputannya akan dikirimkan dan disimpan di database. Code program sign up karena meman sudah dicontohkan dan berbasis orientasi objek sehingga menggunakan class yang didalamnya terdapat fungsi fungsi yang akan digunakan dalam memproses data atau informasi yang ada dalam halaman tersebut. Seperti contoh dalam file PHP signup, menggunakan struktur class SignUp, didalam class terdapat function SendEmail yang nantinya akan berisi code program yang memproses data inputan dan disimpan dalam database, selain itu dituliskan juga code perintah yang digunakan untuk proses pengiriman email ke email addess yang disebelumnya sudah didaftarkan, untuk pengiriman email biasanya digunakan bantuan dengan PHPMailer. untuk fuction inputValidation, berisi syarat atau kondisi yang harus terpenuhi saat user memasukkan inputan.
+</p>
+
+<p>
+    Dalam kode program terdapat 4 syarat yang harus terpenehui, yang pertama mengecek apakah kotak dialog tampilan terisi semua, ketika belum terisi semua, maka akan ada error message yangn ditampilkan, jika tidak maka dilanjutkan selesksi kondisi apakah format email yang digunakan sudah benar, disini digunakan fungsi FILTER_VALIDATE_EMAIL yang akan mendeteksi format email yang dimasukkan. Format disini maksudnya ada @ dan .com atau . yang lainnya sesuai dengan email address yang digunakan. Saat format email tidak sesuai maka akan dioutputkan error message. Jika tidak, lanjut menseleksi apakah panjang password yang dimasukkan terdiri dari 6 atau lebih karakter, ketika tidak akan muncul error jika password yang dimasukkan paling tidaj terdiri dari 6 karakter, ketika sudah 6 atau lebih karakter, tahap seleksi terakhir yaitu, dari karakter password yang dimasukkan apakah terdiri dari nomor dan huruf kapital, jika iya maka akan dilanjutkan proses pengaksesan halaman dasboard, jika tidak maka akan muncul error massage. ketika error massage muncul, kotak dialog yang diisikan akan tereset, dan harus mulai mengisikan dari awal. Dibawah code program php tersebut, saya tambahkan code program html.
+</p>
+
+
+<p>
+    Untuk code program Sign In, seperti yang sudah dipelajari sebelumnya baik melalui praktikum mata kuliah pemrograman web ataupun basis data, code program yang saya gunakan tidak memiliki struktur seperti pada file signup. Program didalamnya tidak menggunakan class ataupun function, tetapi hanya menggunakan code program html untuk tampilan kode dialognya dan digabungkan dengan code program php yang digunakan untuk proses mencarian data yang sebelumnya telah disimpan di database. Proses dalam code phpnya mulai dari menupload an inputan, dilanjutkan pencarian data di table dengan perintah $check_user="select from ..." dan pengecekan data tersebut dalam database, jika ada maka akan menghasilkan nilai 1, ketika hasil tersebut lebih dari ), maka akan masuk ke perintah session dan nantinya akan dilakukan redirect/pengaksesan ke dashboard. jika tidak akan ada error message. 
+</p>
+
+
+### Comparition
+<p>
+    Jika dilihat dari kedua struktur program yang ada, tentu terdapat perbedaan. Dan seperti yang sudah dipelajari pada mata kuliah Pemrograman Berorientasi Objek pada semester 3, struktur program tersebut akan mudah untuk dipahami, lebih ringkas dan lebih tertata rapi karena sudah terstruktur sesuai function function yang ada. Tetapi, karena untuk pemrograman berbasis web yang saya gunakan dari waktu sebelumnya seperti code program file signin, maka untuk cara pemrograman seperti itu lebih familiar karena sudah pernah dilakukan, maka dari itu, masih perlu lagi waktu untuk mengeksplor struktur program oop yang digunakan dalam file php.
+</p>

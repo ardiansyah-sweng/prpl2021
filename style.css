@@ -131,7 +131,7 @@
 
 .container{
 	background-color: #FFF0F5;
-	height: 200px;
+	height: 400px;
 	width: 300px;
 	opacity: 0.7;
 }
@@ -208,9 +208,10 @@ i{
 	padding-top: 3px;
 }
 
-h3{
+.judul{
 	font-family: sans-serif;
 	font-size: 16px;
+	color: #E0FFFF;
 }
 
 .bodylo{
