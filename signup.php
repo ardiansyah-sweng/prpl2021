@@ -8,18 +8,7 @@ class SignUp
      */
     function sendEmail()
     {
-        $to = 'email';
-        $subject = 'Your account has created';
-        $message = 'Hi, ' . $to . '<br><br>Your account is successfully created.<br><br>Please enjoy<br>Sweng-Academy Team';
-        $from = 'peterparker@email.com';
-
-
-        // Sending email
-        if (mail($to, $subject, $message)) {
-            echo 'Your mail has been sent successfully.';
-        } else {
-            echo 'Unable to send email. Please try again.';
-        }
+        //Your code is here
     }
 
     function inputValidation($email, $password)
