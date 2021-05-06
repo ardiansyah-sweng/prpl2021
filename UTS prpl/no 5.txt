@@ -1,0 +1,101 @@
+<?php
+
+ 
+
+/**
+
+ * SignUp
+
+ *
+
+ */
+
+class SignUp                       // Class oop untuk membuat signup
+
+{
+
+    /**
+
+     * Send an email to new user
+
+     */
+
+    function sendEmail()            // function untuk membuat kode program pengiriman email
+
+    {
+
+        //Your code is here
+
+    }
+
+ 
+
+    function inputValidation($email, $password)     // function untuk membuat input data dan memvalidasi inputan user
+
+    {
+
+        if (empty($email) || empty($password)) {       // untuk mengecek apabila inputan masih kosong
+
+            return 'Username or password is empty!';    // apabila ada yang kosong akan keluar peringatan empty nya
+
+        }
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {     // untuk validasi penamaan email, seperti @ dan .com
+
+            return "Invalid email format!";                    // untuk peringatan email ada yang tidak valid
+
+        }
+
+        if (strlen($password) < 6) {                        // password minimal 6 karakter
+
+            return "Your Password Must Contain At Least 6 Characters!"; // peringatan apabila password kurang dari 6 karakter
+
+        }
+
+        if (!preg_match("#[0-9]+#", $password) && !preg_match("#[A-Z]+#", $password)) { // password minimal 1 karakter kapital dan numerik
+
+            return "Your Password Must Contain At Least 1 Number or capital letter! "; // peringatan apabila password belum ada 1 karakter kapital dan numerik
+
+        }
+
+       
+
+        session_start();
+
+        $_SESSION['username'] = $email;         // akan mengambil username dari email yang diinputkan
+
+        header("location: dashboard.php");      // apabila sudah maka akan menuju ke halaman dashboard
+
+      }
+
+}
+
+ 
+
+
+
+Program Saya:
+
+kode program tersebut lebih panjang dari program dosen kemudian pada program saya menggunakan bootstrap 
+dalam membagun sebuah website nya agar mudah dalam penggunaan, serta bisa mempersingkat waktu dalam membuat desai web . 
+Program saya terdapat include db.php yaitu untuk menginputkan data ke data base apabila sudah benar semua, kemudian ada function cek_input 
+pada password yang berfungsi untuk menghapus spasi atau karakter whitespace dari sebuah string, menghapus atau menghilangkan karakter backslashes 
+dan menontaktifkan seluruh perintah – perintah html mengubah special.
+
+ 
+
+Program dari Dosen:
+
+ program tersebut cukup ringkas dan lebih evisien, karena tidak memakan banyak baris dari pada program yang pertama, 
+ terus ada SESSION yang menghubungkan ke dashboard apabila sudah benar inputannya. Akan tetapi program kude tidak ada fungsi untuk 
+ mengecek passwoard lebih lanjut seperti trim, stripslashes dan htmlspecialchars.
+
+ 
+
+Analisis kedua program :
+
+Menurut analisa saya, program yang ringkas dan mudah dipahami adalah program dari dosen, 
+karena dari segi baris yang lebih pendek tidak memakan waktu yang lama dalam algoritmanya, 
+sehingga dari segi pemahaman lebih mudah. untuk memahaminya karena sangat pendek dan kompak dalam algoritmanya.
+Namun, program kedua belum terhubung ke database, dan tidak ada pemeriksaan kata sandi lebih lanjut.
+
