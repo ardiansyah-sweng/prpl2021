@@ -1,0 +1,21 @@
+Analisa program dan perbandingan
+
+a.Analisa program yang saya buat
+•	Pada program saya terdapat lebih dari satu variable untuk penggunaan pada setiap percabangan yang untuk persyaratan password.
+•	Pada percangan password yang memfilter kriteria password harus lebih dari 6 karakter menggunakan variable coba_pass1 kemudian pada percabangan if yang memfilter bahwa password harus memiliki minimal satu huruf capital dan satu buah angka, menggunaka variable coba_pass2.
+•	Setiap output yang merupakan pemberitahuan keslahan password dan segala macam ditampung dalam variable, berbeda dengan codingan sebelumnya yang langsung dengan return.
+•	Beebeda dengan codingan di e-learning yang setiap percabangan if yang mengoperasikan password menggunakan variable yang sama.
+b.Perbandingan dengan contoh di e-learning
+•	Function inputValidation berisikan email dan password
+•	Percabangan if  yang pertama didalamya terdapat ketentuan mengenai persyaratan username dan password dalam pembuatan akun. 
+•	Percabangan if yang kedua berisi pengcekan inputan apakah emain dan password sudah diinputkan atau tidak, jika terdapat salah satu atau keduanya tidak ada maka akan terdapat pemberitahuan “ username or password is empty”.
+•	Percabangan if yang ketiga berisi persyaratan email apakah email yang diinputkan sudah valid atau tidak, jika tidak maka akan muncul pemberitahuan “Invalid email format”. 
+•	Percabangan if yang keempat untuk  persyaratan password, password yang dimasukkan harus lebih dari 6 karekter.
+•	Kemudian percabangan if yang terakhir yaitu password yang diinputkan harus memiliki angka dan juga huruf capital pada passwordnya.
+•	Setelah penginputan sudah sesui dengan ketentuan, maka akan masuk pada penyimpanan nilai dari atribut email sebagai username yang akan di tampilkan pada bagian dashboard
+•	Pada bagian dashboard, memanggil username yang telah diinputkan kemudian ditampilkan sebagai output 
+
+c.Kesimpulan
+Setelah proses analisa program, kesimpulan saya untuk program yang paling ringkas dan lebih mudah dipahami adalah codingan yang ada di e-learning, karena lebih ringkas daan deklarasi variable juga tidak terlalu banyak, sehingga lebih mudah dalam pengontrolan eror atau hal lainnya.
+
+

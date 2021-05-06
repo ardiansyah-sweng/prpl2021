@@ -8,8 +8,6 @@ $pass_salah1 = "";
 $coba_pass2 = true;
 $pass_salah2 = "";
 
-// include 'koneksi.php';
-
 if (ISSET($_POST['submit'])) {
     $email = $_POST['email'];
     $pass = ($_POST['password']);
@@ -32,12 +30,9 @@ if (ISSET($_POST['submit'])) {
     
     if( !empty($email) and !empty($pass) and $coba_pass1 and $coba_pass2){
       
-      // Data di masukan ke sql (opsional)
-      // mysqli_query($koneksi, $sql_insert);
-      // $sql_insert = "INSERT INTO registrasi VALUES('$username', '$password')";
        
       
-      header("location: dashboard.php");
+      header("location: dashboard1.php");
     }
     
 }
@@ -50,8 +45,8 @@ if (ISSET($_POST['submit'])) {
   </head>
   <body>
 
-      <h1>Halaman Registrasi</h1>
-      <h2>Buat Akun</h2>
+      <h1>Halaman Login</h1>
+      <h2>Segera Login </h2>
 
         <form action="" method="POST">
 
@@ -67,9 +62,12 @@ if (ISSET($_POST['submit'])) {
                 <p style="font-size: 14px; margin-top: 10px"><?php echo $pass_salah1; ?></p>
                 <p style="font-size: 14px; margin-top: 10px"><?php echo $pass_salah2; ?></p>
               
-          
+         
               <button type="submit" name="submit" class=""><p>Sing Up</p></button>
-            
+              <p>
+                Belum punya akun?
+                <a href="signup.php">klik untuk daftar</a>
+            </p>
         
   </body>
 </html>
