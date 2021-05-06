@@ -1,92 +1,72 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
 <head>
-	<title>Login</title>
-	<link rel="stylesheet" type="text/css" href="login.css">
-	<style type="text/css">
-		body{
-			background-color: #16c79a;
-			text-align:  center;
-			
-		}
-		.content{
-			text-align:  center;
-		}
-	</style>
+    <style>
+        * {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url(image/wallpaperspongebob.jpg);
+    background-size: cover;
+}
+
+.card {
+    background-size: cover;
+    width: 70%;
+    height: 350px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: #fab040;
+}
+
+form {
+    margin-top: 15%;
+}
+    </style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Login</title>
 </head>
+
 <body>
-	<!-- <a href="index.php">←BACK</a> -->
-	<!-- <div class="content">
-		<h1>LOGIN USER</h1>
-		<form action="" method="post">
-		  <div class="form-group">
-		    <label >Username:</label>
-		    <input  class="form-control" name="uname"><br>
-		  </div>
-		  <div>&nbsp;</div>
-		  <div class="form-group">
-		    <label >Password:</label>
-		    <input type="password" class="form-control" name="pwd"><br>
-		  </div>
-		  <div>&nbsp;</div>
-		  <button type="submit" name="login" class="btn btn-default">LOGIN!</button>
-		</form>
-	</div> -->
-	</div>
-	  <div class="login">
-	    <div class="utama">
-	     Login User
-	  </div>
-	  <div class="login-btn">
-	    <center>USERNAME :</center>
-	    <form method="post" action="">
-	      <div>
-	       <input type="text" name="uname" placeholder="Masukan Username" class="user">
-	     </div>
-	     <div >
-	      <center>PASSWORD :</center>
-	      <input type="password" name="pwd" placeholder="Masukan Password" class="pass" >
-	    </div>
-	    <center><input type="checkbox" name="checkbox" align="center" class="text" id="checkbox"> Simpan Kata Sandi</center>
-	    <div class="btnkirim">
-	     <!-- <input type="button" name="login" value="Log In" > -->
-	     <button type="submit" name="login" class="btn btn-default">LOGIN!</button>
-	   </div>
-	  </form>
-	  </div>
-	</div>
+    <div class="container">
+        <div class="form row ">
+            <div class="col-3"></div>
+            <div class="col">
+                <form action="cek_akun.php" method="post">
+                    <div class="card">
+                        <h2 class="text-center mb-3"><u>Login</u></h2>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="example@gmail.com" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password" required>
+                            <small id="emailHelp" class="form-text text-muted"><a href="signup.php">create Account</a></small>
+                        </div>
+                        <button type="submit" class="btn btn-outline-dark mt-5s">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
+
 </html>
-
-<?php 
-	error_reporting(E_ERROR | E_PARSE);
-	$c = new mysqli("localhost", "root", "", "alumni");
-	if ($c->connect_errno) {
-		echo json_encode(array('message' => 'Koneksi Gagal'));
-		die();
-	}
-
-	if (isset($_POST['login'])) {
-		$uname = $_POST['uname']; 
-		$pwd = $_POST['pwd']; //password
-		$sql = "SELECT * FROM user where idUser='$uname'";
-		$result = $c->query($sql);
-		$pwdDB="";
-		if ($result->num_rows > 0) {
-			while ($obj = $result->fetch_assoc()) {
-				$pwdDB = $obj['password'];
-			}
-			if ($pwdDB==$pwd) {
-				echo "Login berhasil! Klik <a href='dinamis.php'>disini</a> untuk masuk ke pengaturan admin.";
-			}
-			else{
-				echo "Kombinasi username dan password tidak ditemukan";
-			}
-		}
-		else{
-			echo "ERROR. Data tidak ditemukan";
-		}
-	}
-
- ?>
