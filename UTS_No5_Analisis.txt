@@ -1,0 +1,29 @@
+Analisis program saya tersebut :
+Pada program Saya, programnya lebih panjang dari programnya bapak yang mana tidak memakai 
+program function. Dan di program saya terdapat register.php untuk membuat data akun yang 
+terhubung dengan database dan pada register.php ada function cek_input pada password seperti 
+minimal ada angka, huruf besar, minimal 8 huruf sehingga pada saat selesai mendaftar maka akan 
+diarahkan pada tampilan login.php  dan pada tampilan login.php terdapat inputan email 
+dan password untuk masuk ke halaman utama bila mana email dan password salah 
+maka ada pesan alert di atas email apabila email dan password benar maka akan diarahkan 
+pada dashboard yang berisi ucapan selamat datang username dan ada tombol logout. 
+Pada tombol logout bila ditekan maka akan Kembali ke halaman login yang mana 
+ada session_destroyer yang artinya menghapus semua session sebelumnya. 
+Dan pada program saya tidak ada function veritifikasi ke email yang mana 
+saya masih belum paham tentang materi itu.
+
+Program dosen:
+Program dari Dosen, program tersebut cukup ringkas dan lebih efisien, 
+karena tidak memakan banyak baris dari pada programnya yang mana memakai fungsi function, 
+terus ada SESSION yang menghubungkan ke dashboard apabila sudah benar inputannya.
+
+Analisis kedua program :
+Berdasarkan analisis dari saya, program yang ringkas dan mudah dipahami 
+adalah program dari bapaknya, karena dalam segi baris lepih pendek sehingga tidak memakan tempat
+dan waktu yang lama dalam prosesnya, kemudian dari aspek kesederhaaan lebih sederhana 
+programnya bapaknya karena cukup singkat dan padat. 
+
+Kesimpulan:
+Saya lebih memahami program saya sendiri dari pada programnya bapaknya dikarenakan 
+saya mengikuti materi-materi pembelajaran pweb dari semester lalu yang mana 
+belum pernah dikasih materi tentang program function oop pada web. 
