@@ -1,0 +1,7 @@
+$ git clone gh repo clone ardiansyah-sweng/prpl2021
+$ git remote set-url origin https://github.com/alyapuspa/prpl2021     
+$ git push -u origin alyaps_international_1900018352
+$ git add *
+$ git commit -m "prpl"
+$ git pull
+$ git merge <branch>
