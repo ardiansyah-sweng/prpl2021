@@ -16,13 +16,12 @@ function searchMovie() {
                 $.each(movies, function (i, data) {
                     $('#list').append(`
                     <div class="col-sm-3">
-                        <div class="card">
+                        <div class="card bg-transparent text-dark">
                             <img src="`+ data.Poster+`" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">`+ data.Title +`</h5>
                                 <p class="card-text">Year : `+ data.Year +`</p>
-                                <p class="card-text">Type : `+ data.Type +`</p>
-                                
+                                <p class="card-text">Type : `+ data.Type +`</p>    
                             </div>
                         </div>
                     </div>
