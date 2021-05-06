@@ -1,0 +1,40 @@
+{
+    "menu": [
+    
+        {
+            "kategori": "minuman",
+            "nama": "Choco Mint",
+            "deskripsi": "",
+            "harga": 24000,
+            "gambar": "choco-mint.jpg"
+        },
+        {
+            "kategori": "minuman",
+            "nama": "Toffee Coffee",
+            "deskripsi": "",
+            "harga": 24000,
+            "gambar": "toffee-coffee.jpg"
+        },
+        {
+            "kategori": "minuman",
+            "nama": "Green Tea Shake",
+            "deskripsi": "",
+            "harga": 24000,
+            "gambar": "green-tea-shake.jpg"
+        },
+        {
+            "kategori": "minuman",
+            "nama": "Strawberry Milkshake",
+            "deskripsi": "",
+            "harga": 24000,
+            "gambar": "strawberry-milkshake.jpg"
+        },
+        {
+            "kategori": "minuman",
+            "nama": "Chocolate Milkshake",
+            "deskripsi": "",
+            "harga": 24000,
+            "gambar": "chocolate-milkshake.jpg"
+        }
+    ]
+}
