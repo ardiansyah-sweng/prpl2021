@@ -1,0 +1,105 @@
+1.	Analysis Program
+
+Analysis of programs on Github 
+
+<?php
+class SignUp // there is a class Sign Up which serves to create a basic framework
+{
+   
+// function to send email to the user
+function sendEmail() // in the class there is a method, this method is a parameter to return the value and so on, the method is named sendEmail
+{
+//Your code is here
+}
+
+function inputValidation($email, $password) // there is another method, this method is named inputValidation
+{
+// empty function to mark a condition
+if (empty($email) || empty($password)) { // in the method there is an if branch, if the username or password is empty then a notification will appear "Username or password is empty"
+return 'Username or password is empty!';
+}
+// Inside the if fork for e-mail, there is a php filter to filter out data coming from insecure sources.
+// There is an if branch, if the email entered does not match the notification "Invalid email format!"
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {  
+return "Invalid email format!";
+}
+if (strlen($password) < 6) {
+return "Your Password Must Contain At Least 6 Characters!"; // there is a branch if, if the password entered is less than 6 characters, a notification "Your Password Must Contain At Least 6 Characters!"
+}
+// searches for strings with a pattern, returns true if there is a pattern, and false otherwise
+if (!preg_match("#[0-9]+#", $password) && !preg_match("#[A-Z]+#", $password)) {
+return "Your Password Must Contain At Least 1 Number or capital letter! "; // there is a branch if, if the password entered is not listed and at least 1 digit or capital letter, then the password creation process fails
+}
+            
+session_start(); // this function is used to start a new session or follow up an existing session
+$_SESSION['username'] = $email; // here is a temporary variable to retrieve the value stored on the server
+header("location: login1.php"); // the intended location when the input process is complete
+}
+}
+?>
+
+Analysis Programs That I Create
+
+     <?php
+     class SignUp // there is a class SignUp which serves to create a basic framework    
+     {
+// function to send email to the user
+function sendEmail() // in the class there is a method, this method is a parameter to return the value and so on, the method is named sendEmail
+{
+//Your code is here
+}
+function inputValidation($email, $password) // there is another method, this method is named inputValidation
+     {
+     include "koneksi.php"; // to connect to the database
+     if (isset($_POST['register'])) {  // there is an if branch
+           // get data from form
+          // there are properties such as username, password, repeat password, email   	            
+          $Username=$_POST['Username'];
+          $Password=$_POST['Password'];
+          $Password2=$_POST['Repeat Password'];
+          $Email=$_POST['Email'];
+          // create a token
+          $token=hash('aps123', md5(date('Y-m-d'))) ;
+          // check registered users
+$sql_cek=mysqli_query($koneksi,"SELECT * FROM users WHERE email='".$Email."'");
+          $r_cek=mysqli_num_rows($sql_cek);
+          if ($r_cek>0) { // there is an if branch, if using that email the same, then there 
+          will be a notification "Your email has been registered"
+          		echo '<div class="alert alert-warning">
+          			Your email has been registered!
+                     	</div>';
+                  	}else{
+         //there is an else branch, of the data is empty then insert it into the table
+         //active = 0 the user is not yet active 
+         //to input data into the database
+$insert=mysqli_query($koneksi,"INSERT INTO users(username, password, repeat password, email, token, active) VALUES("'.$Username."',"'.$Password. "', "'.$RepeatPassword. "', "'.$Email. "', "'.$token. "', '0')");
+        //to send to email
+        		include("mail.php");
+if ($insert) {  // there is a branch if, if the input and click the register button is successful, the message "your registration was successful" will appear, and after successful there will be an option button to go to the login menu
+echo '<div class="alert alert-success">
+Your registration is successful, please check your email for activation.                     	
+<a href="login.php">Login</a>
+                      </div>';
+         		}
+ 	          }                  
+            }
+            ?>
+
+2.	The Difference Between Programs on Github and Programs That I Create
+
+The program that I have created is also in the PHP format but its form is much longer, complicated, and complex which makes it a bit difficult to understand compared to the sign-up source code program on Github. However, the signup.php program that is on Github is much simpler and works well because the program uses a function that is easy to understand and immediately can get the point or isn't long-winded.
+
+Github program
+-	In the Github program there is a class that functions to create a basic framework and is named SignUp
+-	Furthermore, in the class, there is a method. The method functions as a parameter
+-	Inside the method, there is a branch if email and password
+-	Inside the if fork for email, there is a PHP filter to filter data coming from unsafe sources
+-	There is a preg_match in the if branch to search for strings with a pattern, returns true if there is a pattern, and false otherwise
+-	Empty to mark a condition
+
+Program that I created
+-	Another comparison is another function that is on Github, but not in my program
+
+3.	Conclusion
+
+So, the conclusion I got after I analyzed the two programs was that the first program was a program on Github and the second program was a program that I made myself, that is, the source code provided on Github is simpler and more concise than the source code that I tried to make because the signup.php program is more organized in composing email and password conditioning. In other words, the programs on Github are more concise, easier to understand, and are presented with short but structured code because that source code includes all the instructions requested.
