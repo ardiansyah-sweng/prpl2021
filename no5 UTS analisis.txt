@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * SignUp
+ * 
+ */
+class SignUp
+{
+    /**
+     * Send an email to new user
+     */
+    function sendEmail()
+    {
+        //Your code is here
+    }
+//untuk mengecek email dan password yg diinputkan user benar atau salah
+    function inputValidation($email, $password)
+    {
+        if (empty($email) || empty($password)) {
+            return 'Username or password is empty!';
+        }
+//berguna untuk mengecek email apabila format email salah akan muncul Invalid email format!
+
+       if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return "Invalid email format!";
+        }
+        if (strlen($password) < 6) {
+            return "Your Password Must Contain At Least 6 Characters!";
+        }//mengecek password sudah ada 6 karakter atau belum
+        if (!preg_match("#[0-9]+#", $password) && !preg_match("#[A-Z]+#", $password)) {
+            return "Your Password Must Contain At Least 1 Number or capital letter! ";
+        }//untuk mengecekapakah password mengandung minimal 1 huruf capital atau angka
+        
+        session_start();//untuk memulai sesi
+        $_SESSION['username'] = $email;
+        header("location: dashboard.php");//menghubungkan ke halaman dashboard
+    }
+}
+
+
+komparasikan program yang Anda buat dengan yang telah dicontohkan di kuliah.
+Program yang saya buat masih menggunakan konsep procedural, sedangkan program dari repository menggunakan OOP
