@@ -1,0 +1,2 @@
+Pada source code sign up menggunakan percabangan if else yang berisikan syntax PHPMailer sebagai penghubung email dan nantinya akan muncul notifikasi email dan terkirim ke email yang ditautkan apabila telah melakukan sign up menggunakan email yang ditautkan.
+Dengan begitu source code dapat dikatakan menggunakan konsep prosedural.
