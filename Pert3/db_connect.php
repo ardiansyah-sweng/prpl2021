@@ -1,9 +1,3 @@
-//* UTS PRPL *//
-//* Nama  : Muhammad Nauval Fauzi Khatullah *//
-//* Nim   : 1900018179 *//
-//* Kelas : D *//
-//* Soal Ke 4 *//
-
 <?php
 class database{
 	var $host = "localhost";

@@ -1,9 +1,3 @@
-//* UTS PRPL *//
-//* Nama  : Muhammad Nauval Fauzi Khatullah *//
-//* Nim   : 1900018179 *//
-//* Kelas : D *//
-//* Soal Ke 4 *//
-
 <?php
 include_once('db_connect.php');
 $database = new database();
@@ -21,7 +15,24 @@ if(isset($_POST['register']))
 ?>
 <!doctype html>
 <html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Sign Up Form</title>
+ 
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sticky-footer/">
+ 
+    <!-- Bootstrap core CSS -->
+<link href="bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ 
+    <!-- Custom styles for this template -->
+    <link href="sticky-footer.css" rel="stylesheet">
+  </head>
   <body class="d-flex flex-column h-100">
+    <!-- Begin page content -->
 <main role="main" class="flex-shrink-0">
   <div class="container">
     <h1 class="mt-5">Sign Up Form</h1>
@@ -31,7 +42,7 @@ if(isset($_POST['register']))
     <div class="form-group row">
       <label for="email" class="col-sm-2 col-form-label">Email</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="email" name="email" placeholder="email">
+        <input type="text" class="form-control" id="email" name="email" placeholder="Email">
       </div>
     </div>
  
