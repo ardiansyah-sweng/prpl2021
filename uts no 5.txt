@@ -1,0 +1,8 @@
+menurut saya kode saya sudah sederhana dan mudah dipahami, karena sintaksnya tidak rumit dan menggunakan OOP dimana 1 fungsi akan dipanggil di fungsi lain
+jadi, dibagian fungsi main dari php hanya memanggil fungsi akhir yg memanggil fungsi diatasnya.
+
+perbedaan :
+1. dashboard.php direname menjadi index.php, yang bertujuan agar saat pemanggilan file php tidak perlu detail dan akan menjadi halaman utama
+2. sebelum masuk ke index.php pasti otomatis akan ke halaman login untuk login, apabila tidak memiliki akun maka harus sign up
+3. setelah signup maka harus login kembali, jadi tidak langsung masuk dashboard.
+4. pengiriman email menggunakan PHP Mailer yang akan mengirim pesan saat akun dibuat. 

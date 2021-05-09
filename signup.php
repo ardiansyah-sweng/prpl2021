@@ -1,36 +1,73 @@
 <?php
+include "functions.php";        
 
-/**
- * SignUp
- * 
- */
-class SignUp
+
+
+if(isset($_POST['send']))
 {
-    /**
-     * Send an email to new user
-     */
-    function sendEmail()
-    {
-        //Your code is here
+    //menangkap throw dari html
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+        //instance objek
+    $obj = new SignUp_Login();
+    echo $obj->cek($username, $password);
+}
+
+ ?>
+
+
+ <!DOCTYPE html>
+<html>
+<head>
+
+    <title>Signup</title>
+</head>
+<body>
+
+    <style type="text/css">
+    
+    #text{
+
+        height: 25px;
+        border-radius: 5px;
+        padding: 4px;
+        border: solid thin #aaa;
+        width: 100%;
     }
 
-    function inputValidation($email, $password)
-    {
-        if (empty($email) || empty($password)) {
-            return 'Username or password is empty!';
-        }
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            return "Invalid email format!";
-        }
-        if (strlen($password) < 6) {
-            return "Your Password Must Contain At Least 6 Characters!";
-        }
-        if (!preg_match("#[0-9]+#", $password) && !preg_match("#[A-Z]+#", $password)) {
-            return "Your Password Must Contain At Least 1 Number or capital letter! ";
-        }
-        
-        session_start();
-        $_SESSION['username'] = $email;
-        header("location: dashboard.php");
+    #button{
+
+        padding: 10px;
+        width: 100px;
+        color: white;
+        background-color: cornflowerblue;
+        border: none;
     }
-}
+
+    #box{
+
+        background-color: darkseagreen;
+        margin: auto;
+        width: 300px;
+        padding: 20px;
+    }
+
+
+    </style>
+<div id="container">
+    <div id="box">
+        
+        <form method="post">
+            <div style="font-size: 35px;margin: 10px;color: white;">Signup</div>
+
+            <input id="text" type="text" name="username" ><br><br>
+            <input id="text" type="password" name="password"><br><br>
+
+            <input id="button" type="submit" value="Signup" name="send"><br><br>
+
+            <a href="login.php">Click to Login</a><br><br>
+        </form>
+    </div>
+</div>
+</body>
+</html>
