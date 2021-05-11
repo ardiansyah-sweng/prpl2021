@@ -2,7 +2,8 @@
 
 session_start();
 if (!isset($_SESSION['username'])) {
-    header("Location: signup.php");
+    header("Location: signin.php");
+    exit;
 }
 
 
@@ -25,13 +26,13 @@ if (!isset($_SESSION['username'])) {
     <header>
       <div class="head-container">
         <div class="head-logo">
-           <a href="#" class="head-brand">
+           <a href="dashboard.php" class="head-brand">
              <img src="images/logo.png" alt="">
            </a>
         </div>
         <div class="nav">
-            <a href="#" class="nav-item active">Home</a>
-            <a href="#" class="nav-item">Features</a>
+            <a href="dashboard.php" class="nav-item active">Home</a>
+            <a href="userlog.php" class="nav-item">SignIn History</a>
             <a href="#" class="nav-item">Contact</a>
             <a href="logout.php" class="nav-item logout">Logout</a>
         </div>

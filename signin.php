@@ -1,9 +1,7 @@
 <?php
 
 require_once 'config.php';
-/*
- SignUp
-*/
+
 class SignIn
 {
     private $db;
@@ -40,7 +38,18 @@ class SignIn
               $row = mysqli_fetch_assoc($result);
 
               if(password_verify($password, $row['password'])){
-                 
+
+                 // mencatat waktu ketika user signin
+                date_default_timezone_set('Asia/Jakarta');
+                $time = date('Y-m-d H:i:s', time());
+                $this->db->conn-> query("INSERT INTO log_history VALUES('', '$email', '$time')");
+                
+                // memulai session ketika proses sign in berhasil
+                session_start();
+                $_SESSION['username'] = strstr($email, '@', true);
+                header("location: dashboard.php");
+                exit;
+
               } else {
                   return "You entered wrong password!";
               }
@@ -48,12 +57,7 @@ class SignIn
             } else {
                 return "Your email is not registered!";
             }
- 
         }
-        
-        session_start();
-        $_SESSION['username'] = strstr($email, '@', true);
-        header("location: dashboard.php");
     }
 
     function session(){
@@ -114,7 +118,7 @@ $sinObj->session();
               <h4>Welcome Back :)</h4>
             </div>
 
-             <?php if(isset($_POST['login'])) : ?> 
+             <?php if(isset($_POST['login'])) : ?>
                 <p class="error"> <?= $sinObj -> inputValidation($_POST['email'], $_POST['password']) ?>  </p>
              <?php endif; ?> 
             
@@ -144,11 +148,5 @@ $sinObj->session();
       </div>
     </section>
 
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -72,19 +72,37 @@ class SignUp
               // mengakses atribut publik $conn dari class DbConnect
               // melalui atribut private $db dadri class SignUp
               // kemudian membuat query dari mysqli oop
-              $this->db->conn-> query("INSERT INTO member VALUES('','$email', '$pass')");
+              $this->db->conn-> query("INSERT INTO member VALUES('$email', '$pass')");
               $this->sendEmail($email);
+
+              // mencatat waktu ketika user signup
+              date_default_timezone_set('Asia/Jakarta');
+              $time = date('Y-m-d H:i:s', time());
+              $this->db->conn-> query("INSERT INTO log_history VALUES('', '$email', '$time')");
+
+              // memulai session ketika proses sign up berhasil
+              session_start();
+              $_SESSION['username'] = strstr($email, '@', true);
+              header("location: dashboard.php");
+              exit;
            }
 
         }
         
-        session_start();
-        $_SESSION['username'] = strstr($email, '@', true);
-        header("location: dashboard.php");
+        
+    }
+
+    function session(){
+      session_start();
+      if(isset($_SESSION['username'])){
+        header("Location: dashboard.php");
+        exit;
+      }
     }
 }
 
 $supObj = new SignUp(); //signup objek
+$supObj->session();
 
 ?>
 
