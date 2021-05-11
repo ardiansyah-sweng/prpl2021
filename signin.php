@@ -1,10 +1,8 @@
 <?php
 
 require_once 'config.php';
-/*
- SignUp
-*/
-class SignUp
+
+class SignIn
 {
     private $db;
 
@@ -13,35 +11,6 @@ class SignUp
         // membuat objek dari class DbConnect
         // ditampung dalam atribut $db
         $this->db = new DbConnect();
-    }
-
-    function sendEmail($email)
-    {
-        //Your code is here
-        ini_set('display_errors', 1);
-        error_reporting(E_ALL);
-
-        $to = $email;
-        $user = strstr($email, '@', true);
-
-        //subject email
-        $subject = "Account is successfully created";
-
-        //isi email
-        $messege = "
-        Hi, " . $user . "
-        
-        Your account has been created.
-        
-        Please enjoy
-        buelat. Team
-        ";
-
-        //header email
-        $header = "From:tt7750216@gmail.com";
-
-        mail($to, $subject, $messege, $header);
-        
     }
 
     function inputValidation($email, $password)
@@ -58,33 +27,35 @@ class SignUp
         if (!preg_match("#[0-9]+#", $password) && !preg_match("#[A-Z]+#", $password)) {
             return "Your Password Must Contain At Least 1 Number or capital letter! ";
         }
+
         if(isset($email) && isset($password)){
 
-           $res = $this->db->conn-> query("SELECT * FROM member WHERE email = '$email'");
+            $result = $this->db->conn-> query("SELECT * FROM member WHERE email = '$email'");
 
-           if(mysqli_num_rows($res) > 0){
-             return "This email already registered!";
-           } else {
-              // enskirpsi password
-              $pass = password_hash($password, PASSWORD_DEFAULT);
+            if(mysqli_num_rows($result) === 1){
 
-              // mengakses atribut publik $conn dari class DbConnect
-              // melalui atribut private $db dadri class SignUp
-              // kemudian membuat query dari mysqli oop
-              $this->db->conn-> query("INSERT INTO member VALUES('$email', '$pass')");
-              $this->sendEmail($email);
+              $row = mysqli_fetch_assoc($result);
 
-              // mencatat waktu ketika user signup
-              date_default_timezone_set('Asia/Jakarta');
-              $time = date('Y-m-d H:i:s', time());
-              $this->db->conn-> query("INSERT INTO log_history VALUES('', '$email', '$time')");
+              if(password_verify($password, $row['password'])){
 
-              // memulai session ketika proses sign up berhasil
-              session_start();
-              $_SESSION['username'] = strstr($email, '@', true);
-              header("location: dashboard.php");
-              exit;
-           }
+                 // mencatat waktu ketika user signin
+                date_default_timezone_set('Asia/Jakarta');
+                $time = date('Y-m-d H:i:s', time());
+                $this->db->conn-> query("INSERT INTO log_history VALUES('', '$email', '$time')");
+                
+                // memulai session ketika proses sign in berhasil
+                session_start();
+                $_SESSION['username'] = strstr($email, '@', true);
+                header("location: dashboard.php");
+                exit;
+
+              } else {
+                  return "You entered wrong password!";
+              }
+
+            } else {
+                return "Your email is not registered!";
+            }
         }
     }
 
@@ -97,8 +68,8 @@ class SignUp
     }
 }
 
-$supObj = new SignUp(); //signup objek
-$supObj->session();
+$sinObj = new SignIn(); //signup objek
+$sinObj->session();
 
 ?>
 
@@ -116,7 +87,7 @@ $supObj->session();
     <link rel="stylesheet" href="css/style.css">
 
 
-    <title>Register - buelat.</title>
+    <title>Login - buelat.</title>
 </head>
 <body>
     <header>
@@ -143,11 +114,11 @@ $supObj->session();
           <div class="login-form">
 
             <div class="login-form-head">
-              <h4>Create account</h4>
+              <h4>Welcome Back :)</h4>
             </div>
 
-             <?php if(isset($_POST['registrasi'])) : ?> 
-                <p class="error"> <?= $supObj -> inputValidation($_POST['email'], $_POST['password']) ?>  </p>
+             <?php if(isset($_POST['login'])) : ?>
+                <p class="error"> <?= $sinObj -> inputValidation($_POST['email'], $_POST['password']) ?>  </p>
              <?php endif; ?> 
             
             <form action="" method="post">
@@ -160,11 +131,11 @@ $supObj->session();
               </div>
 
               <div class="input-form">
-                <button class="form btn-signup" type="submit" name="registrasi">Sign Up</button>
+                <button class="form btn-signup" type="submit" name="login">Sign In</button>
               </div>
             </form>
             <div class="login-form-foot">
-              <p>Already have an account? <a href="signin.php">Sign in</a></p>
+              <p>Don't have an account? <a href="signup.php">Sign up</a></p>
             </div>
           </div>
         </div>
@@ -175,7 +146,6 @@ $supObj->session();
         </div>
       </div>
     </section>
-
 
 </body>
 </html>

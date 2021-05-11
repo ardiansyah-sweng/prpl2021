@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: whitesmoke;
+}
+
+/* HEADER CSS */
+header {
+    width: 100%;
+    height: 70px;
+    background: #00BFA6;
+    position: fixed;
+    z-index: 1;
+}
+
+header .head-container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 0.4fr 1fr 1.2fr 0.2fr;
+}
+
+/* HEADER - logo brand */
+
+header .head-logo{
+    height: 100%;
+    grid-column: 2/3;
+    display: grid;
+    align-items: center;
+}
+
+.head-logo img {
+    width: 150px;
+}
+
+/* HEADER - navigation menu */
+header .nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav-item {
+    border-radius: 10px;
+    padding: 10px 15px;
+    
+}
+
+.nav a {
+    text-decoration: none;
+    /* border: 1px solid black; */
+    color: black;
+}
+
+.nav a:hover {
+    opacity: 0.5;
+    background: white;
+}
+
+.nav .active {
+    background: white;
+    color: #00BFA6;
+}
+
+
+/* SECTION - table container */
+.table-container {
+    width: 60%;
+    height: 600px;
+    margin: auto;
+    position: relative;
+    top: 100px;
+}
+
+.table-wrap{
+    width: 100%;
+    height: 100%;
+}
+
+/* SECTION - table form date search */
+.form-container form {
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 2px solid grey;
+    align-items: center;
+    padding: 5px;
+}
+
+.input-form {
+    margin: 10px;
+}
+
+.input-form select {
+    padding: 5px;
+    width: 150px;
+}
+
+.input-form button {
+    border: none;
+    border-radius: 10px;
+    background-color: #00BFA6;
+    color: whitesmoke;
+    transition: .3s ease;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.input-form button:hover {
+    opacity: 0.5;
+}
+
+/* SECTION - table log content */
+.table-log {
+    width: 100%;
+    height: 500px;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    overflow: auto;
+}
+
+.table-log table {
+    border-collapse: collapse;
+}
+
+.table-log th {
+    width: 500px;
+    padding: 10px;
+    background-color: #00BFA6;
+}
+
+.table-log td {
+    height: 40px;
+}
+
+tr:nth-child(even) {background-color: white;}
