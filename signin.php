@@ -30,7 +30,6 @@ class SignIn
 
         if(isset($email) && isset($password)){
 
-            
             $result = $this->db->conn-> query("SELECT * FROM member WHERE email = '$email'");
 
             if(mysqli_num_rows($result) === 1){

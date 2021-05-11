@@ -15,7 +15,6 @@ class SignUp
         $this->db = new DbConnect();
     }
 
-
     function sendEmail($email)
     {
         //Your code is here
@@ -86,10 +85,7 @@ class SignUp
               header("location: dashboard.php");
               exit;
            }
-
         }
-        
-        
     }
 
     function session(){

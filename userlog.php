@@ -8,8 +8,6 @@ if (!isset($_SESSION['username'])) {
 
 require_once 'config.php';
 
-
-
 class logHistory {
 
     private $db;
@@ -90,14 +88,11 @@ class logHistory {
 		}
         return $hasil;
     }
-
 }
 
 $log = new logHistory();
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
