@@ -19,8 +19,8 @@ $awal = date('Y-m-d H:i:s', strtotime('-7 day', $tanggal_now));         //Hari s
 $akhir = date('Y-m-d H:i:s');                                           //Waktu sekarang ini
 
 //Query menampilkan data hari ini sampai 7 hari kebelakang
-// $sql = ("SELECT * FROM log_history WHERE sign_in_time BETWEEN '$awal' AND '$akhir' limit $halaman_awal, $batasan");
-$sql = ("SELECT * FROM log_history WHERE sign_in_time");
+$sql = ("SELECT * FROM log_history WHERE sign_in_time BETWEEN '$awal' AND '$akhir' limit $halaman_awal, $batasan");
+//$sql = ("SELECT * FROM log_history WHERE sign_in_time");
 $data_log_history = mysqli_query($koneksi, $sql);
 $nomor = $halaman_awal + 1;
 
