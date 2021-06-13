@@ -1,0 +1,5 @@
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\xampp\htdocs\prpl2021>
+git.config --global user.name "omaulidya"
+git.config --global user.email "omaulidya@gmail.com"
