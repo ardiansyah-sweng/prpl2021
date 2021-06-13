@@ -71,8 +71,9 @@ $sign = new signup();
 if(isset($_POST['submit'])){
     $sign->email = $_POST['email'];
     $sign->password = $_POST['password'];
-    $sign->process();
     $sign->check();
+    $sign->process();
+   
     
     
 }
