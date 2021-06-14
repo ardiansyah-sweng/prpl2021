@@ -1,0 +1,5 @@
+5.perbedaan dari keduanya yaitu pada bagian form,  if isset() yang mana ini guna untuk memeriksa suatu objek dari nilai inputan form, 
+isset() tersebut akan berperan mencek nilai tersebut dan jika nilai yang dilempar dari suatu form tersebut ada maka akan bernilai true 
+walaupun nilai dari suatu form tersebut tidak terisi atau kosong. sedangkan jika menggunakan fungsi empty(),(), akan berperan mencek 
+kabalikannya dari isset() atau mencari nilai lemparan dari suatu form yang tidak terisi atau kosong.  Fungsi isset() biasanya diterapkan 
+untuk validasi atau proteksi suatu form untuk menghindari adanya injection database yang di akses dari luar form.
