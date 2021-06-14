@@ -1,0 +1,11 @@
+Program signin dan signup yang saya kembangkan hampir sama dengan program yang telah diberikan digithub
+hanya saja tidak memakai function
+
+Perbedaan yang sangat terlihat adalah masalah kerapihan karena program yang saya 
+buat tidak memakai function dan ditempatkan dihalaman yang sama sedangkan program yang 
+telah diberikan menggunakan function dan dari segi kerapihan sudah lebih baik program 
+ini dibandingkan program yang saya berikan maka dari itu program inilah yang lebih mudah dipahami
+
+Agar dapat membuat source code ataupun program yang mudah dipahami dan mudah diperbaiki ketika 
+mendapati sebuah masalah maka diperlukan sebuah pengelompokan function karena itu dapat mempermudah 
+programmer dalam membaca dokumentasi yang sudah ada

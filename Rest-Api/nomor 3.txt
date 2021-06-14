@@ -1,0 +1,6 @@
+$ git clone gh repo clone ardiansyah-sweng/prpl2021
+$ git checkout -b Teguh_Bayu Aji_Wibisono_D_1900018210
+$ git status
+$ git commit -m "Teguh Bayu Aji Wibisono_D_1900018210_UTS"
+$ git remote set-url origin https://github.com/Ajibon-cmd/prpl2021
+$ git push -u origin Teguh Bayu Aji Wibisono_D_1900018210_UTS
