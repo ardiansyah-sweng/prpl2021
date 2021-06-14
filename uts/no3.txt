@@ -1,0 +1,8 @@
+$ git clone gh repo clone ardiansyah-sweng/prpl2021
+$ git checkout -b burhanu_e_1900018242_UTS
+$ git branch
+$ git add .
+$ git status
+$ git commit -m "UTS prpl 2021"
+$ git remote set-url origin https://github.com/BueLat/prpl2021
+$ git push -u origin burhanu_e_1900018242_UTS
