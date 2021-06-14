@@ -1,0 +1,7 @@
+Dari aspek kesederhanaan, tentu dapat dilihat jika programnya lebih sederhana punya bapak.
+sebab setiap dari program saya masih perlu dihubung-hubungkan ke mysql agar bisa terkoneksi dengan database.
+Juga dari kodingan walaupun dapat dipahami tetapi masih tergolong rumit dibandingkan kodingan bapak.
+Disini juga kodingan saya telah saya rombak sedemikian agar tetap mudah dipahami, tetapi untuk kodingan yang
+lebih ringkas tetap punya bapak serta fungsi-fungsinya yang tidak terlalu banyak lebih dapat dipahami.
+Fungsi yang banyak juga tidak bisa menjamin apakah program saya bisa dikategorikan aman atau tidak, maka saya masih
+perlu belajar banyak apalagi tentang OOP untuk bahasa php ini.
