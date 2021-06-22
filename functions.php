@@ -115,8 +115,15 @@ class SignUp_Login
         
         $subjek="Your account has created";
         $email_tujuan=$username;//email penerima yg ditangkap dari html
+       date_default_timezone_set('Asia/Jakarta');
+$date = new DateTime();
+     $hour = date('H');
+        if($hour >= 5 and $hour <= 10 ) $hi = 'Good morning ';
+        else if($hour >= 11 and $hour <= 15) $hi = 'Good afternoon ';
+        else if($hour >= 16 and $hour <= 18) $hi = 'Good evening ';
+        else $hi = 'Good night ';
         $name = substr($email_tujuan,0, strpos($email_tujuan, "@"));//nama di bagian email
-        $isi="Hi, ".$name. "<br><br>Your account is succesfully created <br><br>Please enjoy :) <br>Adminadmin";//isi
+        $isi=$hi.$name. "<br><br>Your account is succesfully created <br><br>Please enjoy :) <br>Adminadmin";//isi
 
         $mail = new PHPMailer();
 

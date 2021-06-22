@@ -18,6 +18,8 @@ session_start();
 </head>
 <body>
 
+	
+
 	<a href="logout.php">Logout</a>
 	<h1>Dashboard</h1>
 	<br>
