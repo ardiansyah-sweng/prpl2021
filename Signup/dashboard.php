@@ -1,6 +1,9 @@
 <?php
-session_start();
+session_start('status');
 if (!isset($_SESSION['username'])) {
-    header("Location: signup.php");
+    header("Location: signin.php");
 }
 echo 'Welcome, '. $_SESSION['username'];
+
+?>
+ 
