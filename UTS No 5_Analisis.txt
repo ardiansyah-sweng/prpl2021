@@ -1,0 +1,171 @@
+Nama	: Kholifatush Sholichah
+NIM	: 1900018190
+Kelas	: D
+
+5.Analisis Source Code Sign-Up dan Sign-In yang saya kembangkan kedalam  beberapa aspek berikut :
+Aspek Kesederhanaan dan mudah dipahami :
+Program yang saya buat merupakan codingan sederhana dan sangat mudah dipahami, dimana codingan saya itu memiliki beberapa file yang saling berkaitan dan codingan yang saya pakai pun menggunakan codingan - codingan yang sudah lumayan familiar dengan saya, dikarenakan codingan saya ini hanya memakai kodingan yang simple dan saya sudah pernah menggunakannya pada semester 2 dan 3 kemarin.
+
+Source Code Sign-Up milik saya :
+<?php 
+   require_once "connect.php"; //untuk mengkoneksikan dengan database
+   
+    if($user->isLoggedIn()){ 
+     header("location: sign-in.php"); //redirect ke index 
+   } 
+
+   if(isset($_POST['kirim'])){ 
+     $email = $_POST['email']; 
+     $password = $_POST['password']; 
+     if($user->registrasi($email, $password)){ 
+       $success = true; 
+     } else{ 
+       $error = $user->getLastError(); 
+     } 
+   } 
+
+ ?>
+
+ <!DOCTYPE html>  
+ <html>  
+   <head> 
+     <meta charset="utf-8"> 
+     <title>Sign Up</title> 
+     <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8"> 
+   </head> 
+   <body> 
+     <div class="login-page"> 
+      <div class="form"> 
+        <form class="register-form" method="post"> 
+          <h2>Sign Up</h2>
+        <hr>
+        <?php if (isset($error)): ?> 
+          <div class="error"> 
+            <?php echo $error ?> 
+          </div> 
+        <?php endif; ?> 
+        <?php if (isset($success)): ?> 
+          <div class="success"> 
+            Berhasil mendaftar.<a href="sign-in.php"> Silahkan Sign in</a>. 
+          </div> 
+        <?php endif; ?>  
+         <input type="email" name="email" placeholder="email" required/> 
+         <input type="password" name="password" placeholder="password" required/> 
+         <button type="submit" name="kirim">Submit</button> 
+         <p class="message">Sudah terdaftar? <a href="sign-in.php">Sign-in disini</a></p> 
+        </form> 
+      </div> 
+     </div> 
+   </body> 
+ </html>  
+
+Source Code Sign-In milik saya :
+<?php 
+ require_once "connect.php"; 
+
+if($user->isLoggedIn()){ 
+
+     header("location: dasboard.php");  
+   }
+
+if(isset($_POST['kirim'])){ 
+     $email = $_POST['email']; 
+     $password = $_POST['password']; 
+
+     if($user->login($email, $password)){ 
+       header("location: dasboard.php"); 
+     } else{ 
+        $error = $user->getLastError(); 
+         } 
+  } 
+ ?>
+
+
+ <!DOCTYPE html>  
+ <html>  
+   <head> 
+     <meta charset="utf-8"> 
+      <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8"> 
+     <title>Sign in</title> 
+     <style type="text/css">
+       h2{
+        color: solid black;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding-top: 10px;
+       }
+     </style>
+     <link rel="stylesheet" href="" media="screen" title="no title" charset="utf-8"> 
+   </head> 
+   <body> 
+     <div class="login-page"> 
+      <div class="form"> 
+       <form class="login-form" method="post"> 
+        <h2>Sign In</h2>
+        <hr>
+        <?php if (isset($error)): ?> 
+          <div class="error"> 
+            <?php echo $error ?> 
+          </div> 
+        <?php endif; ?> 
+        <input type="email" name="email" placeholder="email" required/> 
+        <input type="password" name="password" placeholder="password" required/> 
+        <button type="submit" name="kirim">LOGIN</button> 
+        <p class="message">Belum daftar? <a href="sign-up.php">Sign-up</a></p> 
+       </form> 
+      </div> 
+     </div> 
+   </body> 
+ </html>
+
+
+Source code di github :
+Signup.php
+
+·         Function sendEmail() : Digunakan untuk mengirimkan email kepada user yang telah menginputkan email di halaman signup.
+
+·         if (mail($to, $subject, $message)) {  (//Digunakan untuk mengecek sebuah kondisi yang bertujuan memastikan email terikirim atau tidak.)
+
+            echo 'Your mail has been sent successfully.'; (//Menampilkan pesan bahwa email telah terkirim)
+
+        } else {
+
+            echo 'Unable to send email. Please try again.'; (//Menampilkan pesan bila email belum terkirim)
+
+·         function inputValidation($email, $password) (//Fungsi ini digunakan untuk menampung sebuah inputan dari email dan password yang dimasukkan user)
+    {
+        if (empty($email) || empty($password)) { (//Digunakan untuk mengecek kondisi bahwa email dan password sudah di inputkan apa belum, bila belum akan tampil “Username or password is empty!”)
+            return 'Username or password is empty!';
+        }
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { (//Digunakan untuk memastikan format email yang di inputkan sudah sesuai atau belum, bila belum akan tampil “Invalid email format!”)
+            return "Invalid email format!";
+        }
+        if (strlen($password) < 6) {(//Digunakan untuk menberikan instruksi bahwa password harus berisi 6 karakter)
+            return "Your Password Must Contain At Least 6 Characters!";
+        }
+        if (!preg_match("#[0-9]+#", $password) && !preg_match("#[A-Z]+#", $password)) {{(//Digunakan untuk menberikan instruksi bahwa password harus berisi 1 angka atau huruf kapital)
+            return "Your Password Must Contain At Least 1 Number or capital letter! ";
+        }
+·         session_start(); (//Digunakan untuk memulai eksekusi session pada server dan menyimpannya pada browser untuk ditampilkan pada halaman dashboard,php)
+        $_SESSION['username'] = $email;
+        header("location: dashboard.php");
+(dashboard.php)
+·         session_start(); (//Digunakan untuk memulai eksekusi session pada server dan menyimpannya pada browser serta mengambil inputan dari ‘username’ yang ada pada signup.php lalu ditampilkan pada halaman dashboard,php)
+if (!isset($_SESSION['username'])) {
+    header("Location: signup.php");
+}
+·         echo 'Welcome, '. $_SESSION['username'];
+
+}
+
+
+Komparasi program milik saya dengan program di kuliah yang di github :
+Aspek Kesederhanaan dan mudah dipahami :
+Codingan di github :
+Program yang di github merupakan program sederhana dan mudah dipahami, tetapi saya tidak terlalu familiar dengan codingan yang dipakai digithub contohnya  preg_match, saya tidak terlalu familiar dengan codingan itu.
+
+Codingan milik saya :
+Program yang saya buat merupakan codingan sederhana dan sangat mudah dipahami, dimana codingan saya itu memiliki beberapa file yang saling berkaitan dan codingan yang saya pakai pun menggunakan codingan - codingan yang sudah lumayan familiar dengan saya, dikarenakan codingan saya ini hanya memakai kodingan yang simple dan saya sudah pernah menggunakannya pada semester 2 dan 3 kemarin.
+
+Kesimpulan :
+Codingan yang saya buat lebih sederhana dan mudah dipahami karena codingan saya lebih familiar dengan saya daripada kodingan digithub.
