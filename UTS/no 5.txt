@@ -1,0 +1,71 @@
+1. Program Sign-up
+
+              if (isset($_POST['daftar'])) { // Jika sudah melakukan pendaftaran, maka program ini akan di jalankan
+
+                  //ambil data dari form   
+                  $Username=$_POST['Username'];
+                  $Password=$_POST['Password'];
+                  $Nama=$_POST['Nama'];
+                  $Email=$_POST['Email'];
+                  $Telepon=$_POST['Telepon'];
+
+                  //buat token
+                  $token=hash('sha256', md5(date('Y-m-d'))) ;
+
+                  //cek user terdaftar
+                  $sql_cek=mysqli_query($koneksi,"SELECT * FROM users WHERE email='".$Email."'");
+                  $r_cek=mysqli_num_rows($sql_cek);
+                  if ($r_cek>0) {
+                    echo '<div class="alert alert-warning">
+                            Email anda sudah pernah terdaftar!
+                          </div>';
+                  }else{
+
+                    //jika data kosong maka insert ke tabel;
+                    //aktif =0 user belum aktif
+                    $insert=mysqli_query($koneksi,"INSERT INTO users(username,password,nama,email,no_hp,token,aktif) VALUES('".$Username."','".$Password."','".$Nama."','".$Email."','".$Telepon."','".$token."','0')");
+                    
+		    //include kirim email
+                    include("mail.php");
+
+                    if ($insert) {
+                        echo '<div class="alert alert-success">
+                            Pendaftaran anda berhasil, silahkan cek email anda untuk aktifasi. 
+                            <a href="login.php">Login</a>
+                          </div>';
+                    }
+kesimpulan 
+menurut saya Program di atas agak sedikit rumit karena menggunakan kode yang jarag saya gunakan akan tetapi amsih mudah untuk di pahami 
+
+
+2. Program Sign-in
+		//jika sudah login maka akan dialihkan ke home
+               if (!empty($_SESSION['login'])) {
+                    header("Location:index.php");
+                  }                  
+               include "koneksi.php";
+              if (isset($_POST['login'])) {
+                  $Username=$_POST['Username'];
+                  $Password=$_POST['Password'];
+
+                  //cek user terdaftar dan aktif
+                   $sql_cek=mysqli_query($koneksi,"SELECT * FROM users WHERE username='".$Username."' AND password='".$Password."' AND aktif='1'") or die(mysqli_error($koneksi));
+                   $r_cek=mysqli_fetch_array($sql_cek);
+                   $jml_data=mysqli_num_rows($sql_cek);
+                   if ($jml_data>0) {
+
+                    //buat session login dan redirect ke halaman utama
+                    $_SESSION['login']=md5($r_cek['username']);
+                    $_SESSION['username']=$r_cek['username'];
+                    $_SESSION['nama']=$r_cek['nama'];
+                     header("Location:index.php");
+                   }else{
+
+                    //data tidak di temukan
+                     echo '<div class="alert alert-warning">
+                         Username dan Password anda salah!
+                        </div>';
+                   }
+
+kesimpulan 
+menurut saya Program di atas agak sedikit rumit karena menggunakan kode yang jarag saya gunakan akan tetapi amsih mudah untuk di pahami 
