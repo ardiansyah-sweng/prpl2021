@@ -19,7 +19,7 @@ $new_user = $new_user["data"];
     <title>Data User</title>
   </head>
   <body>
-    <h3>Data User Elearning Terbaru</h3>
+    <h3>Latest e-learning user data</h3>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
