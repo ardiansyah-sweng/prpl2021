@@ -1,0 +1,10 @@
+// Ini adalah data JSON
+// Disini saya hanya mencoba membuat data JSON secara statis
+
+[
+	{
+		"nama": "Zakiyah",
+		"email": "zakiyah@uad.ac.id",
+		"dob": "23.7.1990"
+	}
+]
