@@ -1,0 +1,46 @@
+{
+    "menu": [
+        {
+            "kategori": "Paket",
+            "nama": "Paket Dada",
+            "deskripsi": "Dada Lembut Dengan Nasi Serta Es Teh",
+            "harga": 14500,
+            "gambar": "Paket_Dada_1.png"
+        },
+        {
+            "kategori": "Paket",
+            "nama": "Paket Paha",
+            "deskripsi": "Paha Ayam Dengan Nasi Serta Es Teh",
+            "harga": 13000,
+            "gambar": "Paket_Paha_3.png"
+        },
+        {
+            "kategori": "Paket",
+            "nama": "Paket Sayap",
+            "deskripsi": "Sayap Dengan Nasi Serta Es Teh",
+            "harga": 11500,
+            "gambar": "Paket_Sayap_2.png"
+        },
+        {
+            "kategori": "Paket",
+            "nama": "Paket Kentang",
+            "deskripsi": "Kentang Goreng Gurih Serta Kriuk",
+            "harga": 9500,
+            "gambar": "Potato.png"
+        },
+        {
+            "kategori": "Paket",
+            "nama": "Paket Steak",
+            "deskripsi": "Steak Ayam Berbalur Bumbu Khas",
+            "harga": 15000,
+            "gambar": "Steak.png"
+        },
+        {
+            "kategori": "Paket",
+            "nama": "Paket Strip",
+            "deskripsi": "Ayam Strip Berbalur Tepung Gurih",
+            "harga": 12000,
+            "gambar": "Strip.png"
+        }
+    ]
+}
