@@ -1,0 +1,2 @@
+Proyek berhasil live sehingga bisa diakses langsung via browser.
+link: http://laravel-prpl.herokuapp.com/public

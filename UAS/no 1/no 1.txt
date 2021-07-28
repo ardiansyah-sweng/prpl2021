@@ -1,0 +1,32 @@
+-   Prinsip Single Responsibility
+        Menentukan satu single responsibility suatu class atau modul seharusnya lebih kompleks daripada hanya melihat daftar periksa. Misalnya, satu petunjuk untuk menemukan alasan kita melakukan perubahan adalah menganalisis peserta untuk class kita.
+
+        Berikut adalah beberapa modul dan kemungkinan pesertanya.
+        -   Modul Persistent - Peserta termasuk DBA dan arsitek perangkat lunak.
+        -   Modul Pelaporan - Peserta termasuk juru rulis, akuntan, dan operasi.
+        -   Modul Perhitungan Pembayaran untuk Sistem Penggajian - Peserta mungkin termasuk pengacara, manajer, dan akuntan.
+        -   Modul Pencarian Buku untuk Sistem Manajemen Perpustakaan - Peserta dapat mencakup pustakawan dan/atau klien itu sendiri.
+
+        Keuntungan :
+        -   Objek dapat mencetak sendiri.
+        -   Objek dapat meyimpan sendiri.
+        -   Pandangan Tinggi.
+        -   Dipertimbangkan Desain Perangkat Lunaknya, dengan alasan :
+            -   Nilai utama yang tinggi mengarah pada waktu ke nilai sekunder yang tinggi.
+            -   Nilai sekunder berarti kebutuhan pengguna.
+            -   Kebutuhan pengguna berarti kebutuhan para aktor.
+            -   Kebutuhan para aktor menentukan kebutuhan perubahan aktor tersebut.
+            -   Kebutuhan perubahan aktor mendefinisikan responsibiliti kita.
+
+    Jadi, Prinsip Single Responsibility harus selalu dipertimbangkan saat kita menulis kode. Desain class dan modul sangat dipengaruhi olehnya dan ini mengarah pada desain low couple dengan dependensi yang lebih sedikit dan lebih ringan.
+
+-   Prinsip Open/Closed
+        Tentang OCP dan SRP, kita dapat mengamati bahwa mereka saling melengkapi. Kode yang dirancang khusus dengan SRP dalam pikiran akan dekat dengan prinsip-prinsip OCP atau mudah untuk membuatnya mematuhi prinsip-prinsip tersebut. Ketika kita memiliki kode yang mempunyai alasan tunggal untuk perubahan, saat memperkenalkan fitur baru akan membuat alasan yang sekunder untuk perubahan itu. Jadi SRP maupun OCP akan dilanggar. Dengan cara yang sama, jika kita memiliki kode yang hanya harus berubah ketika fungsi utamanya berubah dan seharusnya tetap tidak berubah ketika fitur baru ditambahkan ke itu, dengan demikian mematuhi OCP, umumnya akan mematuhi SRP juga.
+        Jenis Pelanggaran :
+            Pada class User menggunakan class Logic secara langsung. Jika kita perlu menerapkan kedua class Logic dengan cara yang akan memungkinkan kita untuk menggunakan keduanya satu saat ini dan yang baru, class Logic yang ada akan perlu diubah. User langsung terkait dengan implementasi Logic, tidak ada cara bagi kita untuk memberikan Logic baru tanpa mempengaruhi yang satu saat ini.
+        Bahwa setiap class secara langsung menggunakan class lain akan benar-benar melanggar prinsip Open/Closed. Dan itu benar, tegasnya. Saya menemukan itu cukup menarik untuk menemukan batasan, saat anda menarik garis dan memutuskan bahwa ini lebih sulit untuk mematuhi OCP daripada memodifikasi kode yang ada, atau biaya arsitektur tidak membenarkan biaya untuk mengubah kode yang sudah ada.
+
+        Keuntungan :
+            -   Sifatnya dinamis.
+            -   Menggunakan strategi Design Pattern.
+            -   Menggunakan Template Method Design Pattern.

@@ -1,0 +1,41 @@
+3.	Apa yang terjadi jika kita menambahkan class baru yang meng-implements
+interface? Bagaimana cara memanggil tiap class tersebut?
+
+Jawab :
+
+3.	Prinsip ini memaksa kita untuk dapat merancang sebuah entitas, misalnya class, yang dapat dimodifikasi perilakunya (misalnya, apa yang dikerjakan oleh sebuah method) tanpa harus mempermak source-code nya yang sudah ditetapkan sebelumnya. Maksudnya, sebuah entitas sebaiknya bersifat terbuka untuk diperluas, sehingga sebuah perilaku (method) dapat diubah dengan cara menambahkan kode program baru. Sedangkan untuk kode sumber yang sudah ada, sedapat mungkin tertutup atau setidaknya jarang sekali untuk perlu memodifikasi source-code perilaku yang sudah ada.
+
+Ketika ada 2 perubahan sekaligus, baik perubahan struktur data dan mekanisme menyimpan datanya, Tim dan Baker akan mengubah file yang sama, sehingga bisa saja terjadi konflik kalau misalkan sama-sama mengubah di baris yang sama. Secara semantik pula, mana ada class yang harusnya cuma merepresentasikan struktur data bisa melakukan mekanisme penyimpanan data? Kalau kita refactor class tadi supaya bisa mematuhi kaidah Single Responsibility Principle, kita bisa memisahkan class untuk data model dan data access providernya seperti ini.
+Misal :
+
+class BookChapter {
+		let title: String
+		let content: String
+		
+		init(title: String, content: String) {
+			self.title = title
+		self.content = content
+	}
+}
+
+class Book {
+	let issn: Stringlet author: String
+	let chapters: [BookChapter]
+	
+	init(issn: String, author: String, chapters: [BookChapter]) {
+		self.issn = issn
+		self.author = author
+		self.chapters = chapters
+	}
+}
+
+Pemanggilan
+protocol BookRepository {
+	func save(book: Book)
+}
+class BookRepositoryImpl: BookRepository{
+	func save(book: Book) {
+		// save to database, for example
+	}
+}
+Ketika sudah direfactor seperti ini, pembagian tanggung jawab classnya sudah terpisah, tidak campur seperti tadi.
