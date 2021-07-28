@@ -58,4 +58,4 @@ UserRequest::validate($data);
 $user = new User($data);
 print_r(Json::from($user));
 echo '<br>';
-print_r(Age::now($data));
+echo "Usia : " . Age::now($data)['Tahun'] . " Tahun " . Age::now($data)['Bulan'] . " Bulan " . Age::now($data)['Hari'] . " Hari ";
