@@ -1,0 +1,6 @@
+3. Terapkan perintah perintah utama Git pada source code program Anda.
+$git clone gh repo clone Ardiansyah/prpl2021
+$git remote set-url origin https://github.com/Nafisah27/prpl2021
+$git push –u origin Nafisah-Rahmawati_D_1900018213_UTS_PRPL2021	
+$git add*
+$git commit –m “UTSPRPL”
