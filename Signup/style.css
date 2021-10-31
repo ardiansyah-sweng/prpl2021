@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url(image/background.png);
+    background-size: cover;
+}
+
+.card {
+    background-size: cover;
+    width: 70%;
+    height: 350px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: #fab040;
+}
+
+form {
+    margin-top: 15%;
+}
